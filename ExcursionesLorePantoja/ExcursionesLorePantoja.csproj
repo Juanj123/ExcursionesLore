@@ -1,0 +1,314 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28D3DAC2-63B4-42C9-A612-08B6CC895868}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcursionesLorePantoja</RootNamespace>
+    <AssemblyName>ExcursionesLorePantoja</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apartaTuLugar.aspx" />
+    <Content Include="Clientes.aspx" />
+    <Content Include="content\animate.min.css" />
+    <Content Include="content\apartaTuLugar.css" />
+    <Content Include="content\Boostrap\bootstrap-grid.css" />
+    <Content Include="content\Boostrap\bootstrap-grid.min.css" />
+    <Content Include="content\Boostrap\bootstrap-reboot.css" />
+    <Content Include="content\Boostrap\bootstrap-reboot.min.css" />
+    <Content Include="content\Boostrap\bootstrap.css" />
+    <Content Include="content\Boostrap\bootstrap.min.css" />
+    <Content Include="content\estilosControlAbonos.css" />
+    <Content Include="content\estilosGaleria.css" />
+    <Content Include="content\estilosMaster.css" />
+    <Content Include="content\estilosPrincipal.css" />
+    <Content Include="content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="content\themes\base\jquery-ui.css" />
+    <Content Include="content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="content\themes\base\jquery.ui.all.css" />
+    <Content Include="content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="content\themes\base\jquery.ui.base.css" />
+    <Content Include="content\themes\base\jquery.ui.button.css" />
+    <Content Include="content\themes\base\jquery.ui.core.css" />
+    <Content Include="content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="content\themes\base\jquery.ui.menu.css" />
+    <Content Include="content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="content\themes\base\jquery.ui.slider.css" />
+    <Content Include="content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="content\themes\base\jquery.ui.theme.css" />
+    <Content Include="content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="ControlAbonosAdmin.aspx" />
+    <Content Include="ControlAbonosUsuarios.aspx" />
+    <Content Include="Galeria.aspx" />
+    <Content Include="imgPrueba\pueblos-magicos-de-Guanajuato_Header.jpg" />
+    <Content Include="img\Autobus.png" />
+    <Content Include="img\benches.jpg" />
+    <Content Include="img\bridge.jpg" />
+    <Content Include="img\coast.jpg" />
+    <Content Include="img\Correcto.png" />
+    <Content Include="img\flecha-hacia-arriba.png" />
+    <Content Include="img\maldives-1993704_640.jpg" />
+    <Content Include="img\Niña.png" />
+    <Content Include="img\park.jpg" />
+    <Content Include="img\rails.jpg" />
+    <Content Include="img\rocks.jpg" />
+    <Content Include="img\sky.jpg" />
+    <Content Include="img\sunrise-1014712_640.jpg" />
+    <Content Include="img\traffic.jpg" />
+    <Content Include="img\travel-1749508_640.jpg" />
+    <Content Include="img\tunnel.jpg" />
+    <Content Include="login.aspx" />
+    <Content Include="PerfilUsuario.aspx" />
+    <Content Include="Principal.aspx" />
+    <Content Include="PrincipalUsers.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="apartaTuLugar.aspx.cs">
+      <DependentUpon>apartaTuLugar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="apartaTuLugar.aspx.designer.cs">
+      <DependentUpon>apartaTuLugar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAbonosAdmin.aspx.cs">
+      <DependentUpon>ControlAbonosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlAbonosAdmin.aspx.designer.cs">
+      <DependentUpon>ControlAbonosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlAbonosUsuarios.aspx.cs">
+      <DependentUpon>ControlAbonosUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlAbonosUsuarios.aspx.designer.cs">
+      <DependentUpon>ControlAbonosUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Galeria.aspx.cs">
+      <DependentUpon>Galeria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Galeria.aspx.designer.cs">
+      <DependentUpon>Galeria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAdministrator.Master.cs">
+      <DependentUpon>HomeAdministrator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeAdministrator.Master.designer.cs">
+      <DependentUpon>HomeAdministrator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUsers.Master.cs">
+      <DependentUpon>HomeUsers.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeUsers.Master.designer.cs">
+      <DependentUpon>HomeUsers.Master</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalUsers.aspx.cs">
+      <DependentUpon>PrincipalUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrincipalUsers.aspx.designer.cs">
+      <DependentUpon>PrincipalUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HomeAdministrator.Master" />
+    <Content Include="HomeUsers.Master" />
+    <Content Include="content\Boostrap\bootstrap-grid.css.map" />
+    <Content Include="content\Boostrap\bootstrap-grid.min.css.map" />
+    <Content Include="content\Boostrap\bootstrap-reboot.css.map" />
+    <Content Include="content\Boostrap\bootstrap-reboot.min.css.map" />
+    <Content Include="content\Boostrap\bootstrap.css.map" />
+    <Content Include="content\Boostrap\bootstrap.min.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Home.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62293</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62293/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
