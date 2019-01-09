@@ -10,7 +10,7 @@ namespace Capa_Datos
     {
         public static String G_SERVER = "localhost";
         public static String G_PUERTO = "3307";
-        public static String G_DATABASE = "asesorias";
+        public static String G_DATABASE = "viajeLore";
         public static String G_USER_ID = "root";
         public static String G_USER_PWD = "root";
     }
