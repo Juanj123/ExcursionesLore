@@ -4,7 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
      <link rel="stylesheet" href="content/animate.min.css">
     <link rel="stylesheet" href="content/apartaTuLugar.css" />
- <h1 class="animated infinite slideInDown delay-2s" style="animation-duration: 3s; animation-delay: 2s; animation-iteration-count: infinite;">Hola Compa</h1>
 <div style="position: absolute;margin-left: 65%; margin-top: 1px">
     <h2 style="position: center">Guanajuato, Guanajuato</h2>
   <div class="card" style="width: 25rem;">

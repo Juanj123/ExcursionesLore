@@ -165,6 +165,25 @@
     <Content Include="PerfilUsuario.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="PrincipalUsers.aspx" />
+    <Content Include="scripts\autocomplete.combobox.js" />
+    <Content Include="scripts\bootstrap\bootstrap.bundle.js" />
+    <Content Include="scripts\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="scripts\bootstrap\bootstrap.js" />
+    <Content Include="scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="scripts\bootstrap\ie10-viewport-bug-workaround.js" />
+    <Content Include="scripts\bootstrap\popper.min.js" />
+    <Content Include="scripts\datatables\datatables.js" />
+    <Content Include="scripts\datatables\datatables.min.js" />
+    <Content Include="scripts\dialogos.js" />
+    <Content Include="scripts\dialogosjQuery.js" />
+    <Content Include="scripts\internos\apartaTuLugar.js" />
+    <Content Include="scripts\jquery-3.2.1.js" />
+    <Content Include="scripts\jquery-3.2.1.min.js" />
+    <Content Include="scripts\jquery.scrollUp.js" />
+    <Content Include="scripts\jqueryExcelExport.js" />
+    <Content Include="scripts\popper.min.js" />
+    <Content Include="scripts\smooth-scroll.min.js" />
+    <Content Include="scripts\util.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +284,12 @@
     <Content Include="content\Boostrap\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <Content Include="Home.Master" />
+    <Content Include="scripts\jquery-3.2.1.min.map" />
+    <Content Include="scripts\datatables\jquery.dataTables_i18n.spanish.json" />
+    <Content Include="scripts\bootstrap\bootstrap.bundle.js.map" />
+    <Content Include="scripts\bootstrap\bootstrap.bundle.min.js.map" />
+    <Content Include="scripts\bootstrap\bootstrap.js.map" />
+    <Content Include="scripts\bootstrap\bootstrap.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
