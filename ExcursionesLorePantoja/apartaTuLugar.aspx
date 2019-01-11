@@ -47,7 +47,7 @@
                   <div class="container">			
 	<div class="well well-sm text-center">
 		<div class="btn-group" data-toggle="buttons">
-			<label id="checkNiños" class="btn btn-success active">¿Usted llevara niños Mayores de 6 Años?
+			<label id="btnNiños" class="btn btn-success active">¿Usted llevara niños Mayores de 6 Años?
 				<input id="checkNiños" type="radio" name="options">
 				<span class="glyphicon glyphicon-ok"></span>
 			</label>
@@ -83,7 +83,7 @@
   </div>
     </div>
 </div>
-    <button id="btnGenerar" type="button" class="btn btn-dark" style="position: absolute; margin-left: 470px; margin-top: -200px; width: 250px; height:70px; font-family: 'Arial';font-size: 20px"><img style="width: 50px; height: 50px;" src="img/Correcto.png" <h2>Confirmar Lugares</h2></button>
+    <asp:Button runat="server" id="btnGenerar" CssClass ="btn btn-dark" Text="Confirmar Lugares"/>
   <TABLE border="1" style="margin-left: 70px; margin-top: -580px; position: absolute; z-index: auto; text-align: center;">
     <TR>
       <TD WIDTH="35" HEIGHT="35"><button type="button" class="btn btn-light">01</button></TD>

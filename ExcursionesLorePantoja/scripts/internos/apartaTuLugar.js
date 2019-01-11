@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿var visible = 0;
+$(document).ready(function () {
     $("#txtTotal").val(Sumar());
     $("#lblTotalNinos").html("$" + pagoNino().toString());
     $("#lblTotalAdultos").html("$" + pagoAdulto().toString());
@@ -41,19 +42,37 @@ $("#cmbNinos").change(function () {
     $("#lblTotalNinos").html("$" + pagoNino().toString());
 });
 
-$("#btnGenerar").click(function () {
-    alert("Hola Compa");
+$(".btn.btn-dark").click(function () {
+    alert(visible.toString());
 });
 
-$("#checkNiños").click(function () {
-    mostrar();
+$("#btnNiños").click(function () {
+    visible++;
+    if (visible % 2 === 0) {
+        Ocultar();
+    }
+    else {
+        mostrar();
+    }
 });
 
 function mostrar() {
-    $('#oculto').addClass('animated slideInDown delay-2s form-group col-md-4');
-    $('#lblNinos').addClass('animated slideInDown delay-2s');
-    $('#lblTotalNinos').addClass('animated slideInDown delay-2s');
-    $('#oculto').css({'display': 'block'});
-    $('#lblTotalNinos').css({ 'display': 'block' });
-    $('#lblNinos').css({ 'display': 'block' });
+        $('#oculto').addClass('animated bounceInUp form-group col-md-4');
+        $('#lblNinos').addClass('animated bounceInUp');
+        $('#lblTotalNinos').addClass('animated bounceInUp');
+        $('#oculto').css({ 'display': 'block' });
+        $('#lblTotalNinos').css({ 'display': 'block' });
+        $('#lblNinos').css({ 'display': 'block' });
+        $('.btn.btn-dark').css({ 'margin-top': '-200px' });
+        $('#oculto').css({ 'display': 'block' });
 }
+
+function Ocultar() {
+    $('#oculto').css({ 'display': 'none' });
+    $('#lblTotalNinos').css({ 'display': 'none' });
+    $('#lblNinos').css({ 'display': 'none' });
+    $('.btn.btn-dark').css({ 'margin-top': '-300px' });
+    document.getElementById("cmbNinos").value = '0';
+    $("#txtTotal").val(Sumar());
+}
+
