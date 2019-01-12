@@ -16,98 +16,240 @@
                         <br />
 
                         <div class="table-responsive-sm">
-                            <table class="table table-hover">
+                            <table id="tablaClientes" class="table table-striped table-bordered" style="width:100%">
                                 <thead>
                                     <tr style="background-color: #c3497f; color:white;">
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Destino seleccionado</th>
-                                        <th scope="col">Teléfono</th>
-                                        <th scope="col">Correo Electrónico</th>
-                                        <th scope="col">Cuenta a pagar</th>
-                                        <th scope="col">Estado de la cuenta</th>
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>Destino Seleccionado</th>
+                                        <th>Telefono</th>
+                                        <th>Correo electronico</th>
+                                        <th>Cuenta a pagar</th>
+                                        <th>Estado de la cuenta</th>
                                         <th></th>
-                                   </tr>
+                                    </tr>
                                 </thead>
-            
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Diana</td>
-                                        <td>Mazatlan</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$3,500</td>
+                                        <td>1</td>
+                                        <td>Esteban</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
                                         <td>Pendiente</td>
                                         <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
                                     </tr>
-                                    <tr style="background-color:#D6D7D7; color:black;">
-                                        <th scope="row">2</th>
-                                        <td>Esteban</td>
-                                        <td>Guanajuato</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$2,800</td>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Diana</td>
+                                        <td>Mazatlan</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$2,800.00</td>
                                         <td>Pagado</td>
-                                        <td><button type="button" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</button> <button type="button" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">3</th>
-                                        <td>Marco</td>
-                                        <td>Ixtapa</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$5,300</td>
-                                        <td>Pendiente</td>
-                                        <td><button type="button" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</button> <button type="button" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Sergio</td>
-                                        <td>Ixtapa</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$3,500</td>
-                                        <td>Pendiente</td>
-                                        <td><button type="button" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</button> <button type="button" class="btn btn-danger"> <i class="fas fa-trash-alt"></i>  Eliminar</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Antonio</td>
-                                        <td>Los Cabos, Guanajuato</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$13,700</td>
-                                        <td>Pagado</td>
-                                        <td><button type="button" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</button> <button type="button" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">6</th>
+                                        <td>3</td>
                                         <td>Diego</td>
-                                        <td>Ixtapa</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$2,800</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
                                         <td>Pendiente</td>
-                                        <td><button type="button" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</button> <button type="button" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">7</th>
-                                        <td>Armando</td>
-                                        <td>Guananjuato</td>
-                                        <td>5523768901</td>
-                                        <td>ashdj@gmail.com</td>
-                                        <td>$5,300</td>
+                                        <td>4</td>
+                                        <td>Gris</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
                                         <td>Pagado</td>
-                                        <td><button type="button" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</button> <button type="button" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
                                     </tr>
-                            </tbody>
-                        </table>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Armando</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Gabriela</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Juan Jose</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Rosa</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Irad</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Viviana</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Angel</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Lorena</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Alonso</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Lucero</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Gerardo</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Tannia</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>Esteban</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>Kyra</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>Max</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pendiente</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>Sam</td>
+                                        <td>Mazatlan, Los Cabos</td>
+                                        <td>4436582091</td>
+                                        <td>correo.electronico@gmail.com</td>
+                                        <td>$7,800.00</td>
+                                        <td>Pagado</td>
+                                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>  Editar</button> <button type="button" class="btn btn-danger">  <i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                                    </tr>
+                                </tbody>
+                                
+                                <tfoot>
+                                    <tr style="background-color: #c3497f; color:white;">
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>Destino Seleccionado</th>
+                                        <th>Telefono</th>
+                                        <th>Correo electronico</th>
+                                        <th>Cuenta a pagar</th>
+                                        <th>Estado de la cuenta</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>
