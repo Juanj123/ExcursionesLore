@@ -83,7 +83,9 @@
   </div>
     </div>
 </div>
-    <asp:Button runat="server" id="btnGenerar" CssClass ="btn btn-dark" Text="Confirmar Lugares"/>
+    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+        Confirmar Lugares
+        </button>
   <TABLE border="1" style="margin-left: 70px; margin-top: -580px; position: absolute; z-index: auto; text-align: center;">
     <TR>
       <TD WIDTH="35" HEIGHT="35"><button id="btnAs1" type="button" class="btn btn-light">01</button></TD>
@@ -185,10 +187,6 @@
       <TD WIDTH="35" HEIGHT="35"><button id="btnAs48" type="button" class="btn btn-light">48</button></TD>
     </TR>
   </TABLE>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Confirmar
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -201,11 +199,10 @@
         </button>
       </div>
       <div class="modal-body">
-          ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar Lugares</button>
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <asp:Button runat="server" CssClass="btn btn-outline-dark" id="Button1" Text="Confirmar Lugares"/>
       </div>
     </div>
   </div>

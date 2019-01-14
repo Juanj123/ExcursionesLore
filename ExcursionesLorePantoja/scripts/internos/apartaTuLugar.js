@@ -44,10 +44,6 @@ $("#cmbNinos").change(function () {
     $("#lblTotalNinos").html("$" + pagoNino().toString());
 });
 
-$(".btn.btn-dark").click(function () {
-    alert(asientosSeleccionados);
-});
-
 $("#btnNiños").click(function () {
     visible++;
     if (visible % 2 === 0) {
@@ -318,3 +314,24 @@ $("#btnAs48").click(function () {
     asientosSeleccionados.push("48");
 });
 
+$(".modal-body").html('<div class="alert alert-light" role="alert">' +
+    '<h3 style="color:black; text-align:center;">Lugares Apartados</h3>' +
+    '</div>' +
+    '<div class="alert alert-primary" role="alert">' +
+    '<h3 style="color:black; text-align:center;">Adultos</h3>' +
+    '</div>' +
+    '<h3 style="color:black; text-align:center;">' + document.getElementById('cmbAdultos').value + '</h3>'+
+    '<div class="alert alert-info" role="alert">' +
+    '<h3 style="color:black; text-align:center;">Niños</h3>' +
+    '</div>' +
+    '<h3 style="color:black; text-align:center;">' + document.getElementById('cmbNinos').value + '</h3>'+
+    '<div class="alert alert-dark" role="alert">' +
+    '<h3 style="color:black; text-align:center;">Total a pagar</h3>' +
+    '</div>' +
+    '<h3 style="color:black; text-align:center; font-weight: bold;">$' + (parseFloat(pagoAdulto()) + parseFloat(pagoNino())) + '</h3>' +
+    '<div class="alert alert-dark" role="alert">' +
+    '<h3 style="color:black; text-align:center;">Asientos Seleccionados</h3>' +
+    '</div>' +
+    '<button type="button" class="btn btn-primary">' +
+    '<h4>Asiento <span class="badge badge-light">4</span></h4>' +
+    '</button>');
