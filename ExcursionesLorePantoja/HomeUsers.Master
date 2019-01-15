@@ -7,6 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="content/Boostrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="scripts/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
     <link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="content/estilosMaster.css" rel="stylesheet" />
     <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
@@ -173,6 +175,10 @@
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="scripts/datatables/datatables.min.js"></script>
+    <script src="scripts/datatables/dataTables.bootstrap4.js"></script>
+    <script src="scripts/datatables/groups.js"></script>
+
 
     <script src="scripts/jquery.scrollUp.js"></script>
     <script>
