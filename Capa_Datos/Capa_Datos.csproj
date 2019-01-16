@@ -49,10 +49,14 @@
     <Compile Include="Class1.cs" />
     <Compile Include="cone.cs" />
     <Compile Include="Configuracion.cs" />
+    <Compile Include="DaoVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Capa_Pojos\Capa_Pojos.csproj">
+      <Project>{63932751-7fa1-4258-b79c-a4f1640c5f8d}</Project>
+      <Name>Capa_Pojos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
