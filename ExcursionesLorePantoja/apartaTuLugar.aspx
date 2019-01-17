@@ -83,7 +83,7 @@
   </div>
     </div>
 </div>
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+    <button id="btnConfirmar" type="button" class="btn btn-dark">
         Confirmar Lugares
         </button>
   <TABLE border="1" style="margin-left: 70px; margin-top: -580px; position: absolute; z-index: auto; text-align: center;">
@@ -189,7 +189,7 @@
   </TABLE>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false" data-backdrop="static">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -201,7 +201,7 @@
       <div class="modal-body">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-outline-danger" id="btnCerrar">Cancelar</button>
         <asp:Button runat="server" CssClass="btn btn-outline-dark" id="Button1" Text="Confirmar Lugares"/>
       </div>
     </div>
