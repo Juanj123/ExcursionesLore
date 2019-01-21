@@ -202,11 +202,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" id="btnCerrar">Cancelar</button>
-        <asp:Button runat="server" CssClass="btn btn-outline-dark" id="Button1" Text="Confirmar Lugares"/>
+
       </div>
     </div>
   </div>
 </div>
+    <asp:Button runat="server" CssClass="btn btn-outline-dark" id="BtnEnviar" Text="Confirmar Lugares" OnClick="BtnEnviar_Click"/>
+    <asp:Label ID="GreetingLabel" runat="server" Visible="false" Text="Hello World!" />
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/internos/apartaTuLugar.js"></script>
 

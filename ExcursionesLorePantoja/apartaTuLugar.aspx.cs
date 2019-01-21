@@ -16,5 +16,10 @@ namespace ExcursionesLorePantoja
         {
 
         }
+
+        protected void BtnEnviar_Click(object sender, EventArgs e)
+        {
+            GreetingLabel.Visible = true;
+        }
     }
 }
