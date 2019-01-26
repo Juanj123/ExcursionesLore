@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agregarVideo.aspx" />
     <Content Include="apartaTuLugar.aspx" />
     <Content Include="Clientes.aspx" />
     <Content Include="content\animate.min.css" />
@@ -84,6 +85,7 @@
     <Content Include="content\estilosGaleria.css" />
     <Content Include="content\estilosMaster.css" />
     <Content Include="content\estilosPrincipal.css" />
+    <Content Include="content\sweetalert.css" />
     <Content Include="content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -191,10 +193,19 @@
     <Content Include="scripts\jqueryExcelExport.js" />
     <Content Include="scripts\popper.min.js" />
     <Content Include="scripts\smooth-scroll.min.js" />
+    <Content Include="scripts\sweetalert.min.js" />
     <Content Include="scripts\util.js" />
+    <Content Include="scripts\video.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregarVideo.aspx.cs">
+      <DependentUpon>agregarVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregarVideo.aspx.designer.cs">
+      <DependentUpon>agregarVideo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="apartaTuLugar.aspx.cs">
       <DependentUpon>apartaTuLugar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

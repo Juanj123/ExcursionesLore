@@ -16,7 +16,7 @@ namespace Capa_Datos
         {
             try
             {
-                conectar.ConnectionString = "server='" + Configuracion.G_SERVER + "'; port='" + Configuracion.G_PUERTO + "' ; Database='" + Configuracion.G_DATABASE + "'; user id='" + Configuracion.G_USER_ID + "';   password='" + Configuracion.G_USER_PWD + "';  pooling=false";
+                conectar.ConnectionString = "SERVER=" + Configuracion.G_SERVER + ";port=" + Configuracion.G_PUERTO + ";Database=" + Configuracion.G_DATABASE + ";UID=" + Configuracion.G_USER_ID + ";password=" + Configuracion.G_USER_PWD + ";pooling=false";
                 conectar.Open();
             }
             catch (Exception ExceptionErr)

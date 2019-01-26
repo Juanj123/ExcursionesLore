@@ -12,41 +12,38 @@
                 <br />
 
                 
-                <asp:Button runat="server" ID="btnAgregarVideo" CssClass="btn btn-primary" Text="Agregar Video" />
+                <asp:Button runat="server" ID="btnAgregarVideo" CssClass="btn btn-primary" Text="Agregar Video" OnClick="btnAgregarVideo_Click" />
 
                 <br />
                 <br />
                 <%--tabla jquery--%>
                 <%--<asp:Literal runat="server" ID="ltTabla"></asp:Literal>--%>
 
-                <table id="tableGroups" class="table table-bordered table-hover table-responsive-sm table-responsive-md text-center">
+                <table id="tableGr" class="table table-bordered table-hover table-responsive-sm table-responsive-md text-center">
                     <thead class="bg-success text-white">
 
                         <tr>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Ruta</th>
                             <th scope="col">Estado</th>
-                            <th scope="col"></th>
+                            <th scope="col">Ruta</th>
+                            
+                            
 
 
                         </tr>
                     </thead>
                     <tbody>
-                          <tr>
-                            <td>Viaje a cuba</td>
-                            <td>https://www.youtube.com/embed/znk2OICHbjY?controls=0</td>
-                            <td>Mostrar</td>
-                            <td>
-                                <asp:Button runat="server" ID="Button1" Text="Modificar" CssClass="btn btn-success" />
-                                <asp:Button runat="server" ID="Button9" Text="Eliminar" CssClass="btn btn-danger" />
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
 
             </div>
         </div>
     </div>
+
+   
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+          
 </asp:Content>

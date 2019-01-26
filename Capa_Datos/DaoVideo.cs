@@ -25,7 +25,7 @@ namespace Capa_Datos
                 MySqlCommand cm = new MySqlCommand();
                 MySqlDataReader dr;
                 conec.conexion();
-                string sql = " select * from video";
+                string sql = " select * from principalvideo where idVideo=12 and estado like 'Activo'";
                 cm.CommandText = sql;
                 cm.CommandType = CommandType.Text;
                 cm.Connection = conec.conectar;
@@ -52,5 +52,61 @@ namespace Capa_Datos
                 conec.conectar.Close();
             }
         }
+
+        public List<pojoMostrarVideo> obtenerVideos()
+        {
+
+            try
+            {
+
+                List<pojoMostrarVideo> concep = new List<pojoMostrarVideo>();
+                pojoMostrarVideo pojoAmbu;
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                string sql = " select nombre, estado, url from principalvideo";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    pojoAmbu = new pojoMostrarVideo();
+                    pojoAmbu.Nombre = dr.GetString("nombre");
+                    pojoAmbu.Estado = dr.GetString("estado");
+                    pojoAmbu.Url = dr.GetString("url");
+                    concep.Add(pojoAmbu);
+                }
+                return concep;
+            }
+            catch (Exception exc)
+            {
+                return null;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
+        public string insertar(PojoVideo pojoVideo)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            conec.conexion();
+            cmd.Parameters.AddWithValue("@idUsuario", pojoVideo.IdUsuario);
+            cmd.Parameters.AddWithValue("@nombre", pojoVideo.Nombre);
+            cmd.Parameters.AddWithValue("@estado", pojoVideo.Estado);
+            cmd.Parameters.AddWithValue("@url", pojoVideo.Url);
+            string consul = "insert into principalVideo(idVideo, idUsuario, nombre, estado,url)VALUES(null,@idUsuario,@nombre,@estado,@url)";
+            cmd.CommandText = consul;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conec.conectar;
+            cmd.ExecuteNonQuery();
+            conec.conectar.Close();
+            return "Guardado";
+
+        }
+
     }
 }
