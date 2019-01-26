@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -68,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agregarVideo.aspx" />
     <Content Include="apartaTuLugar.aspx" />
     <Content Include="Clientes.aspx" />
     <Content Include="content\animate.min.css" />
@@ -78,10 +80,12 @@
     <Content Include="content\Boostrap\bootstrap-reboot.min.css" />
     <Content Include="content\Boostrap\bootstrap.css" />
     <Content Include="content\Boostrap\bootstrap.min.css" />
+    <Content Include="content\estiloClientes.css" />
     <Content Include="content\estilosControlAbonos.css" />
     <Content Include="content\estilosGaleria.css" />
     <Content Include="content\estilosMaster.css" />
     <Content Include="content\estilosPrincipal.css" />
+    <Content Include="content\sweetalert.css" />
     <Content Include="content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -188,10 +192,19 @@
     <Content Include="scripts\jqueryExcelExport.js" />
     <Content Include="scripts\popper.min.js" />
     <Content Include="scripts\smooth-scroll.min.js" />
+    <Content Include="scripts\sweetalert.min.js" />
     <Content Include="scripts\util.js" />
+    <Content Include="scripts\video.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregarVideo.aspx.cs">
+      <DependentUpon>agregarVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregarVideo.aspx.designer.cs">
+      <DependentUpon>agregarVideo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="apartaTuLugar.aspx.cs">
       <DependentUpon>apartaTuLugar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

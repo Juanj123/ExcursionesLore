@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
-    <link href="content/estilosClientes.css" rel="stylesheet" />
+    <link href="content/estiloClientes.css" rel="stylesheet" />
 
     <h1 class="text-center" id="titulo">Agenda de Clientes</h1>
     <br />
