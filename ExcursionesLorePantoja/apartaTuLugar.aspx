@@ -88,8 +88,8 @@
         </button>
   <TABLE border="1" style="margin-left: 70px; margin-top: -580px; position: absolute; z-index: auto; text-align: center;">
     <TR>
-      <TD WIDTH="35" HEIGHT="35"><button id="btnAs1" type="button" class="btn btn-light">01</button></TD>
-      <TD WIDTH="35" HEIGHT="35"><button id="btnAs2"type="button" class="btn btn-light">02</button></TD>
+      <TD WIDTH="35" HEIGHT="35"><button id="btnAs1" type="button" class="btn btn-light">01</button></TD></TD>
+      <TD WIDTH="35" HEIGHT="35"><button id="btnAs2" type="button" class="btn btn-light">02</button></TD></TD>
     </TR>
     <TR>
       <TD WIDTH="35" HEIGHT="35"><button id="btnAs5" type="button" class="btn btn-light">05</button></TD>
@@ -202,12 +202,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" id="btnCerrar">Cancelar</button>
-
+          <asp:Button runat="server" CssClass="btn btn-outline-dark" id="BtnEnviar" Text="Confirmar Lugares" OnClick="BtnEnviar_Click"/>
       </div>
     </div>
   </div>
 </div>
-    <asp:Button runat="server" CssClass="btn btn-outline-dark" id="BtnEnviar" Text="Confirmar Lugares" OnClick="BtnEnviar_Click"/>
+    <button id="btnPrueba">Prueba</button>
+    <p id="demo"></p>
     <asp:Label ID="GreetingLabel" runat="server" Visible="false" Text="Hello World!" />
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/internos/apartaTuLugar.js"></script>

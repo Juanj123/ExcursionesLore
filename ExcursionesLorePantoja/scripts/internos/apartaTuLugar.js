@@ -768,11 +768,7 @@ $("#btnConfirmar").click(function () {
         var asiento = '<button type="button" class="btn btn-primary"><h4>Asiento <span class="badge badge-light">' + asientosSeleccionados.unique()[i] + '</span></h4></button>';
         $("#Padre").append(asiento);
     }
-});
-
-$.ajax({
-    url: uri,
-    data: JSON.stringify(asientosSeleccionados),
-    type: 'POST',
-    contentType: 'application/json'
+    var Json = JSON.stringify(asientosSeleccionados.unique());
+    document.cookie = 'Prueba=' + Json + ';';
+    //$("#demo").append(JSON.parse(Json));
 });
