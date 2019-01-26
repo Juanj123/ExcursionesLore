@@ -49,6 +49,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="cone.cs" />
     <Compile Include="Configuracion.cs" />
+    <Compile Include="DaoApartaTuLugar.cs" />
     <Compile Include="DaoVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

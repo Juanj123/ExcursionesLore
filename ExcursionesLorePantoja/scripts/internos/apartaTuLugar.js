@@ -8,8 +8,7 @@ var asientosActivo1=0; var asientosActivo2=0; var asientosActivo3=0; var asiento
     asientosActivo31=0; var asientosActivo32=0; var asientosActivo33=0; var asientosActivo34=0; var asientosActivo35=0; var
     asientosActivo36=0; var asientosActivo37=0; var asientosActivo38=0; var asientosActivo39=0; var asientosActivo40=0; var
     asientosActivo41=0; var asientosActivo42=0; var asientosActivo43=0; var asientosActivo44=0; var asientosActivo45=0; var
-    asientosActivo46=0; var asientosActivo47=0; var asientosActivo48 = 0;
-var asientosSeleccionados = [];
+    asientosActivo46 = 0; var asientosActivo47 = 0; var asientosActivo48 = 0;
 Array.prototype.unique = function (a) {
     return function () {
         return this.filter(a);
@@ -770,5 +769,23 @@ $("#btnConfirmar").click(function () {
     }
     var Json = JSON.stringify(asientosSeleccionados.unique());
     document.cookie = 'Prueba=' + Json + ';';
-    //$("#demo").append(JSON.parse(Json));
+    $("#demo").append(JSON.parse(Json));
 });
+
+function sendDataAjax() {
+
+    $.ajax({
+        type: "POST",
+        url: "apartaTuLugar.aspx/asientos",
+        data: null,
+        contentType: "application/json; charset=utf-8",
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+        },
+        success: function (data) {
+            console.log(data.d);
+            addRowDT(data.d);
+        }
+
+    });
+}

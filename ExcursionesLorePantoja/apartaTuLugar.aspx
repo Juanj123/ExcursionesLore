@@ -212,7 +212,7 @@
     <asp:Label ID="GreetingLabel" runat="server" Visible="false" Text="Hello World!" />
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/internos/apartaTuLugar.js"></script>
-
+    <asp:GridView ID="dgvEjemplo" runat="server"></asp:GridView>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>
