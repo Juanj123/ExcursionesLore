@@ -31,5 +31,24 @@ namespace Capa_Datos
             cm.ExecuteNonQuery();
             conect.conectar.Close();
         }
+        public void registrarReservacion(PojoApartaTuLugar objcrear)
+        {
+            conect.conexion();
+            string sql;
+            MySqlCommand cm;
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@IdUsuario", objcrear.IdUsuario);
+            cm.Parameters.AddWithValue("@IdViaje", objcrear.IdViaje);
+            cm.Parameters.AddWithValue("@IdAutobus", objcrear.IdAutobus);
+            cm.Parameters.AddWithValue("@IdReservacion", objcrear.IdReservacion);
+            cm.Parameters.AddWithValue("@N_Asiento", objcrear.N_Asiento);
+            cm.Parameters.AddWithValue("@Nota", objcrear.Nota);
+            sql = "insert into asientosselect (idUsuario, idAutobus, idViaje, Nota) value(@IdUsuario, @IdAutobus,@IdViaje, @Nota);";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = conect.conectar;
+            cm.ExecuteNonQuery();
+            conect.conectar.Close();
+        }
     }
 }

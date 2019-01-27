@@ -234,7 +234,7 @@ namespace ExcursionesLorePantoja
                 objAparta.N_Asiento = asiento;
                 objDaoAparta.registrarAsientos(objAparta);
             }
-            
+            objDaoAparta.registrarReservacion(objAparta);
         }
     }
 }
