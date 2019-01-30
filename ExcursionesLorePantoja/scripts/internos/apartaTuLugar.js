@@ -52,6 +52,10 @@ $(document).ready(function () {
     });
 });
 
+$("#btnSelectAsientos").click(function () {
+    autobus();
+});
+
 function Sumar() {
     var n1 = document.getElementById('cmbAdultos').value;
     var n2 = document.getElementById('cmbNinos').value;
@@ -98,6 +102,14 @@ $("#btnNiños").click(function () {
         mostrar();
     }
 });
+
+function autobus() {
+    $("#tarjetaLugarViaje").css({ 'position': 'absolute', 'margin-left': '65%', 'margin-top': '1px' });
+    $("#opcionesApartaTuLugar").css({ 'position': 'absolute','margin-left': '30%', 'margin-top': '5%' });
+    $("#asientosAutobus").css({ 'display': 'block' });
+    //style = "position: absolute; margin-left: 65%; margin-top: 1px"
+    //style = "margin-top: 5%; margin-left: 100px"
+}
 
 function mostrar() {
         $('#oculto').addClass('animated bounceInUp form-group col-md-4');

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
     <link rel="stylesheet" href="content/animate.min.css">
     <link rel="stylesheet" href="content/apartaTuLugar.css" />
-    <div style="position: absolute; margin-left: 65%; margin-top: 1px">
+    <div id="tarjetaLugarViaje" style="position:absolute; margin-left: 50%">
         <h2 style="position: center">Guanajuato, Guanajuato</h2>
         <div class="card" style="width: 25rem;">
             <img class="card-img-top" src="imgPrueba/pueblos-magicos-de-Guanajuato_Header.jpg" alt="Card image cap">
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="card-deck mb-3 text-center">
-        <div class="col-md-4" style="margin-top: 5%; margin-left: 100px">
+        <div class="col-md-4" id="opcionesApartaTuLugar" style="margin-top:3%; margin-left:200px">
             <div class="card">
                 <div class="card-header bg-dark text-white">
                     <h4 class="my-0 font-weight-normal">Aparta Tu Lugar</h4>
@@ -77,6 +77,7 @@
                     <li class="list-group-item">
                         <h3 style="margin-left: -70px">Total de Asientos</h3>
                         <input class="form-control" id="txtTotal" readonly="readonly" type="text" style="position: inherit; width: 50px; height: 50px; text-align: center; margin-top: -45px; margin-left: 270px" />
+                        <button type="button" class="btn btn-danger" id="btnSelectAsientos">Escoge tus asientos</button>
                     </li>
                 </ul>
             </div>
@@ -90,7 +91,7 @@
         <button id="btnConfirmar" type="button" class="btn btn-dark">
         Confirmar Lugares
     </button>
-        <table border="1" style="margin-left: 70px; margin-top: -580px; position: absolute; z-index: auto; text-align: center;">
+        <table border="1" style="margin-left: 90px; margin-top: -570px; position: absolute; z-index: auto; text-align: center;">
             <tr>
                 <td width="35" height="35">
                     <button id="btnAs1" type="button" class="btn btn-light">01</button></td>
@@ -167,7 +168,7 @@
             </tr>
         </table>
 
-        <table border="1" style="margin-left: 220px; margin-top: -580px; position: absolute; z-index: auto; text-align: center;">
+        <table border="1" style="margin-left: 230px; margin-top: -570px; position: absolute; z-index: auto; text-align: center;">
             <tr>
                 <td width="35" height="35">
                     <button id="btnAs3" type="button" class="btn btn-light">03</button></td>
