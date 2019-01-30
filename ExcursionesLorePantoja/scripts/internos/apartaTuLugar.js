@@ -107,6 +107,9 @@ function autobus() {
     $("#tarjetaLugarViaje").css({ 'position': 'absolute', 'margin-left': '65%', 'margin-top': '1px' });
     $("#opcionesApartaTuLugar").css({ 'position': 'absolute','margin-left': '30%', 'margin-top': '5%' });
     $("#asientosAutobus").css({ 'display': 'block' });
+    $("#btnSelectAsientos").css({ 'display': 'none' });
+    // Programare aqui que si el numero de items del arreglo de lugares es igual o mayor al numero de personas que iran
+    // Entonces que valide si ya se paso del numero de lugares a Seleccionar.
     //style = "position: absolute; margin-left: 65%; margin-top: 1px"
     //style = "margin-top: 5%; margin-left: 100px"
 }
