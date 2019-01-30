@@ -50,5 +50,26 @@ namespace Capa_Datos
             cm.ExecuteNonQuery();
             conect.conectar.Close();
         }
+        public List<PojoApartaTuLugar> getAsientosOcupados(int id)
+        {
+            conect.conexion();
+            List<PojoApartaTuLugar> lstUsuarios = new List<PojoApartaTuLugar>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select distinct s.n_asientos as Seleccionados from asientosselect s join viajes v where (s.idViaje = v.idViaje and s.idViaje = "+id+"); ";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = conect.conectar;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                PojoApartaTuLugar objUs = new PojoApartaTuLugar();
+                objUs.N_Asiento = dr.GetInt32("Seleccionados");
+                lstUsuarios.Add(objUs);
+            }
+            conect.conectar.Close();
+            return lstUsuarios;
+        }
     }
 }

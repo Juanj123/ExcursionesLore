@@ -129,7 +129,6 @@ $("#btnAs1").click(function () {
     else {
         $("#btnAs1").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("1");
-        alert(1);
     }
 });
 
@@ -143,7 +142,6 @@ $("#btnAs2").click(function () {
     else {
         $("#btnAs2").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("2");
-        alert(2);
     }
 });
 
@@ -157,7 +155,6 @@ $("#btnAs3").click(function () {
     else {
         $("#btnAs3").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("3");
-        alert(3);
     }
 });
 
