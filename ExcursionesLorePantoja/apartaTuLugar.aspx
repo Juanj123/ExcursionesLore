@@ -275,6 +275,9 @@
       <div class="modal-body">
         <p>¡Usted excedió el número de asientos válidos para las personas que selecciono anteriormente!</p>
           <p><b>por favor ingrese el numero de personas correctas</b></p>
+          <div id="innecesario">
+              <p id="lblLugares"><b></b></p>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="btnAceptarError">Aceptar</button>

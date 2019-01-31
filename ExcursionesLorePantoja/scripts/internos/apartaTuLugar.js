@@ -111,15 +111,12 @@ function autobus() {
     $("#opcionesApartaTuLugar").css({ 'position': 'absolute', 'margin-left': '30%', 'margin-top': '5%' });
     $("#asientosAutobus").css({ 'display': 'block' });
     $("#btnSelectAsientos").css({ 'display': 'none' });
-    // Programare aqui que si el numero de items del arreglo de lugares es igual o mayor al numero de personas que iran
-    // Entonces que valide si ya se paso del numero de lugares a Seleccionar.
-    //style = "position: absolute; margin-left: 65%; margin-top: 1px"
-    //style = "margin-top: 5%; margin-left: 100px"
 }
 
 function validarLugares() {
     if (asientosSeleccionados.length > Sumar()) {
         $("#ModalReposo").modal("show");
+        $("#lblLugares").html('<h3 style="color:black; text-align:center;"> Número de asientos que debió seleccionar <br style="color:red">' + Sumar() + '</br></h3>');
         $("#btnAceptarError").click(function () {
             location.reload();
         });
@@ -845,7 +842,7 @@ $("#btnConfirmar").click(function () {
     }
     var Json = JSON.stringify(asientosSeleccionados.unique());
     document.cookie = 'Asientos=' + Json + ';';
-    document.cookie = 'Lugares = ' + Sumar() + ';';
+    document.cookie = 'Lugares =' + Sumar() + ';';
 });
 
 function sendDataAjax() {
