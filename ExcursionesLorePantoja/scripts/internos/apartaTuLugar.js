@@ -104,6 +104,9 @@ $("#btnNiños").click(function () {
 });
 
 function autobus() {
+    $("#tarjetaLugarViaje").addClass("animated bounceInLeft");
+    $("#opcionesApartaTuLugar").addClass("animated bounceInLeft");
+    $("#asientosAutobus").addClass("animated bounceInLeft");
     $("#tarjetaLugarViaje").css({ 'position': 'absolute', 'margin-left': '65%', 'margin-top': '1px' });
     $("#opcionesApartaTuLugar").css({ 'position': 'absolute','margin-left': '30%', 'margin-top': '5%' });
     $("#asientosAutobus").css({ 'display': 'block' });
