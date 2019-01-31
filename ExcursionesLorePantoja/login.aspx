@@ -8,52 +8,115 @@
     <link href="content/Boostrap/bootstrap.min.css" rel="stylesheet" />
     <link href="scripts/bootstrap/bootstrap.js" rel="stylesheet" type="text/css" />
     <title>Login</title>
-
+ <link rel="shortcut icon" href="img/Niña.png" />
     <style type="text/css">
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-
         body {
-            background-image: url(img/Niña.png);
-            background-size: cover;
-            background-attachment: fixed;
-            font-family: 'Times New Roman' 'Times New Roman';
+            margin: 0;
+            padding: 0;
+            background: url(img/beach-1236581.jpg);
+            width:100%;
+            background-repeat: no-repeat;
+            background-size:cover;
+            font-family: sans-serif;
         }
-
-        ul {
-            margin-bottom:50px;
+        .login-box {
+            width: 420px;
+            height: 420px;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+            border-color: fuchsia;
+            border-style: groove;
         }
-        ul li a {
-            font-size: 29px;
-            color: white;
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: 170px;
         }
-        ul li a {
-            text-decoration:none;
-            color: gray;
+        h1 {
+            margin: 0px;
+            padding: 0 0 20px;
+            text-align:center;
+            font-size: 22px;
+        }
+        .login-box p {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+        .campos {
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        #entrar {
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #1c8adb;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+        #entrar2 {
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #1c8adb;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+        #entrar:hover {
+            cursor: pointer;
+            background: #39dc79;
+            color: #000;
+        }
+        #entrar2:hover {
+            cursor: pointer;
+            background: #39dc79;
+            color: #000;
+        }
+        .login-box a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8"></div>
-                <div class="row" style="margin-top: 120px; box-shadow: -1px 1px 50px 10px black;">
-                    <div class="col-md-6">
-                        <ul>
-                            <li><a href="#">Sing in</a></li>
-                            <li><a href="#">/Sing up</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6"></div> 
-                </div>
-                <div class="col-md-2"></div>
-            </div>
+    
+        <div class="login-box">
+            <img src="img/Niña.png" alt="Logo" class="avatar"/>
+            <form id="form1" runat="server">
+                <h1>Login</h1>
+                <p>Nombre Usuario</p>
+                <asp:TextBox runat="server" ID="txtnombreusuario" Font-Names="nombreusuario" placeholder="Ingresa Nombre de usuario" CssClass="campos"></asp:TextBox>
+                 <p>Contraseña</p>
+                <asp:TextBox runat="server" Font-Names="contrasena" ID="txtcontrasena" placeholder="Ingresa contraseña" CssClass="campos"></asp:TextBox>
+                <asp:Button runat="server" type="submit" value="Login" Text="Entrar" ID="entrar" OnClick="entrar_Click" />
+                <a href="#">Olvidaste Contraseña?</a>
+                 <asp:Button runat="server" type="submit" value="Login" Text="Registrar" ID="entrar2" />
+            </form>
         </div>
-    </form>
+    
 </body>
 </html>
-
