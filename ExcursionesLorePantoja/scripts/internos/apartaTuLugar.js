@@ -1,23 +1,23 @@
 ﻿var visible = 0;
-var asientosActivo1=0; var asientosActivo2=0; var asientosActivo3=0; var asientosActivo4=0; var asientosActivo5=0; var
-    asientosActivo6=0; var asientosActivo7=0; var asientosActivo8=0; var asientosActivo9=0; var asientosActivo10=0; var
-    asientosActivo11=0; var asientosActivo12=0; var asientosActivo13=0; var asientosActivo14=0; var asientosActivo15=0; var
-    asientosActivo16=0; var asientosActivo17=0; var asientosActivo18=0; var asientosActivo19=0; var asientosActivo20=0; var
-    asientosActivo21=0; var asientosActivo22=0; var asientosActivo23=0; var asientosActivo24=0; var asientosActivo25=0; var
-    asientosActivo26=0; var asientosActivo27=0; var asientosActivo28=0; var asientosActivo29=0; var asientosActivo30=0; var
-    asientosActivo31=0; var asientosActivo32=0; var asientosActivo33=0; var asientosActivo34=0; var asientosActivo35=0; var
-    asientosActivo36=0; var asientosActivo37=0; var asientosActivo38=0; var asientosActivo39=0; var asientosActivo40=0; var
-    asientosActivo41=0; var asientosActivo42=0; var asientosActivo43=0; var asientosActivo44=0; var asientosActivo45=0; var
-    asientosActivo46 = 0; var asientosActivo47 = 0; var asientosActivo48 = 0;
+var asientosActivo1 = 0; var asientosActivo2 = 0; var asientosActivo3 = 0; var asientosActivo4 = 0; var asientosActivo5 = 0; var
+    asientosActivo6 = 0; var asientosActivo7 = 0; var asientosActivo8 = 0; var asientosActivo9 = 0; var asientosActivo10 = 0; var
+        asientosActivo11 = 0; var asientosActivo12 = 0; var asientosActivo13 = 0; var asientosActivo14 = 0; var asientosActivo15 = 0; var
+            asientosActivo16 = 0; var asientosActivo17 = 0; var asientosActivo18 = 0; var asientosActivo19 = 0; var asientosActivo20 = 0; var
+                asientosActivo21 = 0; var asientosActivo22 = 0; var asientosActivo23 = 0; var asientosActivo24 = 0; var asientosActivo25 = 0; var
+                    asientosActivo26 = 0; var asientosActivo27 = 0; var asientosActivo28 = 0; var asientosActivo29 = 0; var asientosActivo30 = 0; var
+                        asientosActivo31 = 0; var asientosActivo32 = 0; var asientosActivo33 = 0; var asientosActivo34 = 0; var asientosActivo35 = 0; var
+                            asientosActivo36 = 0; var asientosActivo37 = 0; var asientosActivo38 = 0; var asientosActivo39 = 0; var asientosActivo40 = 0; var
+                                asientosActivo41 = 0; var asientosActivo42 = 0; var asientosActivo43 = 0; var asientosActivo44 = 0; var asientosActivo45 = 0; var
+                                    asientosActivo46 = 0; var asientosActivo47 = 0; var asientosActivo48 = 0;
 var asientosSeleccionados = [];
 Array.prototype.unique = function (a) {
     return function () {
         return this.filter(a);
     };
 }
-(function (a, b, c) {
-    return c.indexOf(a, b + 1) < 0;
-    }); 
+    (function (a, b, c) {
+        return c.indexOf(a, b + 1) < 0;
+    });
 
 $(document).ready(function () {
     $("#txtTotal").val(Sumar());
@@ -108,7 +108,7 @@ function autobus() {
     $("#opcionesApartaTuLugar").addClass("animated bounceInLeft");
     $("#asientosAutobus").addClass("animated bounceInLeft");
     $("#tarjetaLugarViaje").css({ 'position': 'absolute', 'margin-left': '65%', 'margin-top': '1px' });
-    $("#opcionesApartaTuLugar").css({ 'position': 'absolute','margin-left': '30%', 'margin-top': '5%' });
+    $("#opcionesApartaTuLugar").css({ 'position': 'absolute', 'margin-left': '30%', 'margin-top': '5%' });
     $("#asientosAutobus").css({ 'display': 'block' });
     $("#btnSelectAsientos").css({ 'display': 'none' });
     // Programare aqui que si el numero de items del arreglo de lugares es igual o mayor al numero de personas que iran
@@ -117,15 +117,24 @@ function autobus() {
     //style = "margin-top: 5%; margin-left: 100px"
 }
 
+function validarLugares() {
+    if (asientosSeleccionados.length > Sumar()) {
+        $("#ModalReposo").modal("show");
+        $("#btnAceptarError").click(function () {
+            location.reload();
+        });
+    }
+}
+
 function mostrar() {
-        $('#oculto').addClass('animated bounceInUp form-group col-md-4');
-        $('#lblNinos').addClass('animated bounceInUp');
-        $('#lblTotalNinos').addClass('animated bounceInUp');
-        $('#oculto').css({ 'display': 'block' });
-        $('#lblTotalNinos').css({ 'display': 'block' });
-        $('#lblNinos').css({ 'display': 'block' });
-        $('.btn.btn-dark').css({ 'margin-top': '-200px' });
-        $('#oculto').css({ 'display': 'block' });
+    $('#oculto').addClass('animated bounceInUp form-group col-md-4');
+    $('#lblNinos').addClass('animated bounceInUp');
+    $('#lblTotalNinos').addClass('animated bounceInUp');
+    $('#oculto').css({ 'display': 'block' });
+    $('#lblTotalNinos').css({ 'display': 'block' });
+    $('#lblNinos').css({ 'display': 'block' });
+    $('.btn.btn-dark').css({ 'margin-top': '-200px' });
+    $('#oculto').css({ 'display': 'block' });
 }
 
 function Ocultar() {
@@ -147,6 +156,7 @@ $("#btnAs1").click(function () {
     else {
         $("#btnAs1").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("1");
+        validarLugares();
     }
 });
 
@@ -160,6 +170,7 @@ $("#btnAs2").click(function () {
     else {
         $("#btnAs2").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("2");
+        validarLugares();
     }
 });
 
@@ -173,6 +184,7 @@ $("#btnAs3").click(function () {
     else {
         $("#btnAs3").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("3");
+        validarLugares();
     }
 });
 
@@ -186,6 +198,7 @@ $("#btnAs4").click(function () {
     else {
         $("#btnAs4").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("4");
+        validarLugares();
     }
 });
 
@@ -199,6 +212,7 @@ $("#btnAs5").click(function () {
     else {
         $("#btnAs5").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("5");
+        validarLugares();
     }
 });
 
@@ -212,6 +226,7 @@ $("#btnAs6").click(function () {
     else {
         $("#btnAs6").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("6");
+        validarLugares();
     }
 });
 
@@ -225,6 +240,7 @@ $("#btnAs7").click(function () {
     else {
         $("#btnAs7").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("7");
+        validarLugares();
     }
 });
 
@@ -238,6 +254,7 @@ $("#btnAs8").click(function () {
     else {
         $("#btnAs8").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("8");
+        validarLugares();
     }
 });
 
@@ -251,6 +268,7 @@ $("#btnAs9").click(function () {
     else {
         $("#btnAs9").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("9");
+        validarLugares();
     }
 });
 
@@ -264,6 +282,7 @@ $("#btnAs10").click(function () {
     else {
         $("#btnAs10").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("10");
+        validarLugares();
     }
 });
 
@@ -277,6 +296,7 @@ $("#btnAs11").click(function () {
     else {
         $("#btnAs11").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("11");
+        validarLugares();
     }
 });
 
@@ -290,6 +310,7 @@ $("#btnAs12").click(function () {
     else {
         $("#btnAs12").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("12");
+        validarLugares();
     }
 });
 
@@ -303,6 +324,7 @@ $("#btnAs13").click(function () {
     else {
         $("#btnAs13").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("13");
+        validarLugares();
     }
 });
 
@@ -316,6 +338,7 @@ $("#btnAs14").click(function () {
     else {
         $("#btnAs14").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("14");
+        validarLugares();
     }
 });
 
@@ -329,6 +352,7 @@ $("#btnAs15").click(function () {
     else {
         $("#btnAs15").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("15");
+        validarLugares();
     }
 });
 
@@ -342,6 +366,7 @@ $("#btnAs16").click(function () {
     else {
         $("#btnAs16").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("16");
+        validarLugares();
     }
 });
 
@@ -355,6 +380,7 @@ $("#btnAs17").click(function () {
     else {
         $("#btnAs17").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("17");
+        validarLugares();
     }
 });
 
@@ -368,6 +394,7 @@ $("#btnAs18").click(function () {
     else {
         $("#btnAs18").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("18");
+        validarLugares();
     }
 });
 
@@ -381,6 +408,7 @@ $("#btnAs19").click(function () {
     else {
         $("#btnAs19").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("19");
+        validarLugares();
     }
 });
 
@@ -394,6 +422,7 @@ $("#btnAs20").click(function () {
     else {
         $("#btnAs20").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("20");
+        validarLugares();
     }
 });
 
@@ -407,6 +436,7 @@ $("#btnAs21").click(function () {
     else {
         $("#btnAs21").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("21");
+        validarLugares();
     }
 });
 
@@ -420,6 +450,7 @@ $("#btnAs22").click(function () {
     else {
         $("#btnAs22").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("22");
+        validarLugares();
     }
 });
 
@@ -433,6 +464,7 @@ $("#btnAs23").click(function () {
     else {
         $("#btnAs23").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("23");
+        validarLugares();
     }
 });
 
@@ -446,6 +478,7 @@ $("#btnAs24").click(function () {
     else {
         $("#btnAs24").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("24");
+        validarLugares();
     }
 });
 
@@ -459,6 +492,7 @@ $("#btnAs25").click(function () {
     else {
         $("#btnAs25").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("25");
+        validarLugares();
     }
 });
 
@@ -472,6 +506,7 @@ $("#btnAs26").click(function () {
     else {
         $("#btnAs26").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("26");
+        validarLugares();
     }
 });
 
@@ -485,6 +520,7 @@ $("#btnAs27").click(function () {
     else {
         $("#btnAs27").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("27");
+        validarLugares();
     }
 });
 
@@ -498,6 +534,7 @@ $("#btnAs28").click(function () {
     else {
         $("#btnAs28").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("28");
+        validarLugares();
     }
 });
 
@@ -511,6 +548,7 @@ $("#btnAs29").click(function () {
     else {
         $("#btnAs29").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("29");
+        validarLugares();
     }
 });
 
@@ -524,6 +562,7 @@ $("#btnAs30").click(function () {
     else {
         $("#btnAs30").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("30");
+        validarLugares();
     }
 });
 
@@ -537,6 +576,7 @@ $("#btnAs31").click(function () {
     else {
         $("#btnAs31").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("31");
+        validarLugares();
     }
 });
 
@@ -550,6 +590,7 @@ $("#btnAs32").click(function () {
     else {
         $("#btnAs32").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("32");
+        validarLugares();
     }
 });
 
@@ -563,6 +604,7 @@ $("#btnAs33").click(function () {
     else {
         $("#btnAs33").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("33");
+        validarLugares();
     }
 });
 
@@ -576,6 +618,7 @@ $("#btnAs34").click(function () {
     else {
         $("#btnAs34").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("34");
+        validarLugares();
     }
 });
 
@@ -589,6 +632,7 @@ $("#btnAs35").click(function () {
     else {
         $("#btnAs35").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("35");
+        validarLugares();
     }
 });
 
@@ -602,6 +646,7 @@ $("#btnAs36").click(function () {
     else {
         $("#btnAs36").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("36");
+        validarLugares();
     }
 });
 
@@ -615,6 +660,7 @@ $("#btnAs37").click(function () {
     else {
         $("#btnAs37").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("37");
+        validarLugares();
     }
 });
 
@@ -628,6 +674,7 @@ $("#btnAs38").click(function () {
     else {
         $("#btnAs38").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("38");
+        validarLugares();
     }
 });
 
@@ -641,6 +688,7 @@ $("#btnAs39").click(function () {
     else {
         $("#btnAs39").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("39");
+        validarLugares();
     }
 });
 
@@ -654,6 +702,7 @@ $("#btnAs40").click(function () {
     else {
         $("#btnAs40").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("40");
+        validarLugares();
     }
 });
 
@@ -667,6 +716,7 @@ $("#btnAs41").click(function () {
     else {
         $("#btnAs41").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("41");
+        validarLugares();
     }
 });
 
@@ -680,6 +730,7 @@ $("#btnAs42").click(function () {
     else {
         $("#btnAs42").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("42");
+        validarLugares();
     }
 });
 
@@ -693,6 +744,7 @@ $("#btnAs43").click(function () {
     else {
         $("#btnAs43").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("43");
+        validarLugares();
     }
 });
 
@@ -706,6 +758,7 @@ $("#btnAs44").click(function () {
     else {
         $("#btnAs44").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("44");
+        validarLugares();
     }
 });
 
@@ -719,6 +772,7 @@ $("#btnAs45").click(function () {
     else {
         $("#btnAs45").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("45");
+        validarLugares();
     }
 });
 
@@ -732,6 +786,7 @@ $("#btnAs46").click(function () {
     else {
         $("#btnAs46").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("46");
+        validarLugares();
     }
 });
 
@@ -745,6 +800,7 @@ $("#btnAs47").click(function () {
     else {
         $("#btnAs47").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("47");
+        validarLugares();
     }
 });
 
@@ -758,6 +814,7 @@ $("#btnAs48").click(function () {
     else {
         $("#btnAs48").css({ 'backgroundColor': 'green' });
         asientosSeleccionados.push("48");
+        validarLugares();
     }
 });
 
@@ -787,7 +844,8 @@ $("#btnConfirmar").click(function () {
         $("#Padre").append(asiento);
     }
     var Json = JSON.stringify(asientosSeleccionados.unique());
-    document.cookie = 'Prueba=' + Json + ';';
+    document.cookie = 'Asientos=' + Json + ';';
+    document.cookie = 'Lugares = ' + Sumar() + ';';
 });
 
 function sendDataAjax() {

@@ -173,6 +173,7 @@
     <Content Include="PrincipalUsers.aspx" />
     <Content Include="PrincipalVideo.aspx" />
     <Content Include="scripts\autocomplete.combobox.js" />
+    <Content Include="scripts\bootbox.min.js" />
     <Content Include="scripts\bootstrap\bootstrap.bundle.js" />
     <Content Include="scripts\bootstrap\bootstrap.bundle.min.js" />
     <Content Include="scripts\bootstrap\bootstrap.js" />

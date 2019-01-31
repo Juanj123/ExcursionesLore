@@ -263,8 +263,28 @@
             </div>
         </div>
     </div>
+    <div class="modal Reposo" tabindex="-1" role="dialog" id="ModalReposo">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: black; color: white">
+        <h5 class="modal-title">Se excedio el numero de Lugares Seleccionados</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¡Usted excedió el número de asientos válidos para las personas que selecciono anteriormente!</p>
+          <p><b>por favor ingrese el numero de personas correctas</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btnAceptarError">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/internos/apartaTuLugar.js"></script>
+    <script src="scripts/bootbox.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>

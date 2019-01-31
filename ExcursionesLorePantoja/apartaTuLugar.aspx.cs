@@ -29,7 +29,7 @@ namespace ExcursionesLorePantoja
         {
             int idUsuario = 100;
             int idAutobus = 10;
-            valores = Request.Cookies["Prueba"].Value;
+            valores = Request.Cookies["Asientos"].Value;
             string[] asientos = valores.Split(',');
             foreach (string word in asientos)
             {

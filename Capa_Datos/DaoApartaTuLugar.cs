@@ -71,5 +71,49 @@ namespace Capa_Datos
             conect.conectar.Close();
             return lstUsuarios;
         }
+        public int getTipoAutobus(int id)
+        {
+            
+            int idAutobus = 0;
+            conect.conexion();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select idAutobus from viajes where idViaje= '" + id + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = conect.conectar;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                PojoApartaTuLugar objUs = new PojoApartaTuLugar();
+                idAutobus = objUs.IdAutobus = dr.GetInt32("idAutobus");
+            }
+            conect.conectar.Close();
+            return idAutobus;
+        }
+
+        public int getEdad(int id)
+        {
+
+            int idAutobus = 0;
+            conect.conexion();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select edad from usuarios where idUsuario = '" + id + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = conect.conectar;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                PojoApartaTuLugar objUs = new PojoApartaTuLugar();
+                idAutobus = objUs.IdAutobus = dr.GetInt32("edad");
+            }
+            conect.conectar.Close();
+            return idAutobus;
+        }
+
     }
 }
