@@ -19,13 +19,15 @@ namespace ExcursionesLorePantoja
     public partial class apartaTuLugar : System.Web.UI.Page
     {
         List<int> lugares = new List<int>();
-        string valores;
+        List<int> lugares19 = new List<int>();
+        string valores, valores19;
         int id = 1;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
             var lista = objDaoAparta.getAsientosOcupados(id);
+
             var Json = JsonConvert.SerializeObject(lista);
             Response.Cookies["asientosAutobus"].Value = Json;
         }
@@ -195,41 +197,46 @@ namespace ExcursionesLorePantoja
                 {
                     lugares.Add(10);
                 }
-                if (Regex.IsMatch(word, "(9)"))
+            }
+            valores19 = Request.Cookies["Asientos19"].Value;
+            string[] asientos19 = valores.Split(',');
+            foreach (string word19 in asientos19)
+            {
+                if (Regex.IsMatch(word19, "(9)"))
                 {
-                    lugares.Add(9);
+                    lugares19.Add(9);
                 }
-                if (Regex.IsMatch(word, "(8)"))
+                if (Regex.IsMatch(word19, "(8)"))
                 {
-                    lugares.Add(8);
+                    lugares19.Add(8);
                 }
-                if (Regex.IsMatch(word, "(7)"))
+                if (Regex.IsMatch(word19, "(7)"))
                 {
-                    lugares.Add(7);
+                    lugares19.Add(7);
                 }
-                if (Regex.IsMatch(word, "(6)"))
+                if (Regex.IsMatch(word19, "(6)"))
                 {
-                    lugares.Add(6);
+                    lugares19.Add(6);
                 }
-                if (Regex.IsMatch(word, "(5)"))
+                if (Regex.IsMatch(word19, "(5)"))
                 {
-                    lugares.Add(5);
+                    lugares19.Add(5);
                 }
-                if (Regex.IsMatch(word, "(4)"))
+                if (Regex.IsMatch(word19, "(4)"))
                 {
-                    lugares.Add(4);
+                    lugares19.Add(4);
                 }
-                if (Regex.IsMatch(word, "(3)"))
+                if (Regex.IsMatch(word19, "(3)"))
                 {
-                    lugares.Add(3);
+                    lugares19.Add(3);
                 }
-                if (Regex.IsMatch(word, "(2)"))
+                if (Regex.IsMatch(word19, "(2)"))
                 {
-                    lugares.Add(2);
+                    lugares19.Add(2);
                 }
-                if (Regex.IsMatch(word, "(1)"))
+                if (Regex.IsMatch(word19, "(1)"))
                 {
-                    lugares.Add(1);
+                    lugares19.Add(1);
                 }
             }
             PojoApartaTuLugar objAparta = new PojoApartaTuLugar();
@@ -240,6 +247,11 @@ namespace ExcursionesLorePantoja
             foreach (int asiento in lugares)
             {
                 objAparta.N_Asiento = asiento;
+                objDaoAparta.registrarAsientos(objAparta);
+            }
+            foreach (int asiento19 in lugares19)
+            {
+                objAparta.N_Asiento = asiento19;
                 objDaoAparta.registrarAsientos(objAparta);
             }
             objDaoAparta.registrarReservacion(objAparta);
