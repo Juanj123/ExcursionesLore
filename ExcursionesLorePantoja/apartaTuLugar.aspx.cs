@@ -20,15 +20,21 @@ namespace ExcursionesLorePantoja
     {
         List<int> lugares = new List<int>();
         string valores;
+        int id = 1;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
+            var lista = objDaoAparta.getAsientosOcupados(id);
+            var Json = JsonConvert.SerializeObject(lista);
+            Response.Cookies["asientosAutobus"].Value = Json;
         }
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
             int idUsuario = 100;
             int idAutobus = 10;
+            int idViaje = 1;
             valores = Request.Cookies["Asientos"].Value;
             string[] asientos = valores.Split(',');
             foreach (string word in asientos)
@@ -230,12 +236,22 @@ namespace ExcursionesLorePantoja
             DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
             objAparta.IdUsuario = idUsuario;
             objAparta.IdAutobus = idAutobus;
+            objAparta.IdViaje = idViaje;
             foreach (int asiento in lugares)
             {
                 objAparta.N_Asiento = asiento;
                 objDaoAparta.registrarAsientos(objAparta);
             }
             objDaoAparta.registrarReservacion(objAparta);
+            objDaoAparta.registrarReservacionUsuario(objAparta);
+        }
+        [WebMethod]
+        public static string asientos(int id)
+        {
+            DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
+            var lista = objDaoAparta.getAsientosOcupados(id);
+            var Json = JsonConvert.SerializeObject(lista);
+            return Json;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Capa_Datos
             cm.Parameters.AddWithValue("@IdReservacion", objcrear.IdReservacion);
             cm.Parameters.AddWithValue("@N_Asiento", objcrear.N_Asiento);
             cm.Parameters.AddWithValue("@Nota", objcrear.Nota);
-            sql = "insert into asientosselect (idUsuario, idAutobus, n_asientos) value(@IdUsuario, @IdAutobus, @N_Asiento);";
+            sql = "insert into asientosselect(idUsuario, idAutobus, idViaje,n_asientos) value(@IdUsuario, @IdAutobus,@IdViaje, @N_Asiento);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = conect.conectar ;
@@ -43,17 +43,38 @@ namespace Capa_Datos
             cm.Parameters.AddWithValue("@IdReservacion", objcrear.IdReservacion);
             cm.Parameters.AddWithValue("@N_Asiento", objcrear.N_Asiento);
             cm.Parameters.AddWithValue("@Nota", objcrear.Nota);
-            sql = "insert into asientosselect (idUsuario, idAutobus, idViaje, Nota) value(@IdUsuario, @IdAutobus,@IdViaje, @Nota);";
+            sql = "insert into reservacion(idAutobus, idViaje) value(@IdAutobus, @IdViaje);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = conect.conectar;
             cm.ExecuteNonQuery();
             conect.conectar.Close();
         }
-        public List<PojoApartaTuLugar> getAsientosOcupados(int id)
+
+        public void registrarReservacionUsuario(PojoApartaTuLugar objcrear)
         {
             conect.conexion();
-            List<PojoApartaTuLugar> lstUsuarios = new List<PojoApartaTuLugar>();
+            string sql;
+            MySqlCommand cm;
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@IdUsuario", objcrear.IdUsuario);
+            cm.Parameters.AddWithValue("@IdViaje", objcrear.IdViaje);
+            cm.Parameters.AddWithValue("@IdAutobus", objcrear.IdAutobus);
+            cm.Parameters.AddWithValue("@IdReservacion", objcrear.IdReservacion);
+            cm.Parameters.AddWithValue("@N_Asiento", objcrear.N_Asiento);
+            cm.Parameters.AddWithValue("@Nota", objcrear.Nota);
+            sql = "insert into reservacionusuario value(@IdUsuario, @IdReservacion);";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = conect.conectar;
+            cm.ExecuteNonQuery();
+            conect.conectar.Close();
+        }
+
+        public List<asientos> getAsientosOcupados(int id)
+        {
+            conect.conexion();
+            List<asientos> lstUsuarios = new List<asientos>();
             string sql;
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
@@ -64,7 +85,7 @@ namespace Capa_Datos
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                PojoApartaTuLugar objUs = new PojoApartaTuLugar();
+                asientos objUs = new asientos();
                 objUs.N_Asiento = dr.GetInt32("Seleccionados");
                 lstUsuarios.Add(objUs);
             }

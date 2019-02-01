@@ -104,6 +104,7 @@ $("#btnNiños").click(function () {
 });
 
 function autobus() {
+    var asientos;
     $("#tarjetaLugarViaje").addClass("animated bounceInLeft");
     $("#opcionesApartaTuLugar").addClass("animated bounceInLeft");
     $("#asientosAutobus").addClass("animated bounceInLeft");
@@ -111,6 +112,141 @@ function autobus() {
     $("#opcionesApartaTuLugar").css({ 'position': 'absolute', 'margin-left': '30%', 'margin-top': '5%' });
     $("#asientosAutobus").css({ 'display': 'block' });
     $("#btnSelectAsientos").css({ 'display': 'none' });
+    var asientosOcupados;
+    asientosOcupados = document.cookie.split(',');
+    for (var j = 0; j < asientosOcupados.length; j++) {
+        if (asientosOcupados[j].match("(1)")) {
+            $("#btnAs1").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(2)")) {
+            $("#btnAs2").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(3)")) {
+            $("#btnAs3").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(4)")) {
+            $("#btnAs4").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(5)")) {
+            $("#btnAs5").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(6)")) {
+            $("#btnAs6").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(7)")) {
+            $("#btnAs7").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(8)")) {
+            $("#btnAs8").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(9)")) {
+            $("#btnAs9").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(10)")) {
+            $("#btnAs10").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(11)")) {
+            $("#btnAs11").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(12)")) {
+            $("#btnAs12").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(13)")) {
+            $("#btnAs13").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(14)")) {
+            $("#btnAs14").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(15)")) {
+            $("#btnAs15").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(16)")) {
+            $("#btnAs16").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(17)")) {
+            $("#btnAs17").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(18)")) {
+            $("#btnAs18").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(19)")) {
+            $("#btnAs19").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(20)")) {
+            $("#btnAs20").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(21)")) {
+            $("#btnAs21").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(22)")) {
+            $("#btnAs22").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(23)")) {
+            $("#btnAs23").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(24)")) {
+            $("#btnAs24").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(25)")) {
+            $("#btnAs25").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(26)")) {
+            $("#btnAs26").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(27)")) {
+            $("#btnAs27").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(28)")) {
+            $("#btnAs28").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(29)")) {
+            $("#btnAs29").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(30)")) {
+            $("#btnAs30").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(31)")) {
+            $("#btnAs31").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(32)")) {
+            $("#btnAs32").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(33)")) {
+            $("#btnAs33").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(34)")) {
+            $("#btnAs34").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(35)")) {
+            $("#btnAs35").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(36)")) {
+            $("#btnAs36").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(37)")) {
+            $("#btnAs37").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(38)")) {
+            $("#btnAs38").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(39)")) {
+            $("#btnAs39").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(40)")) {
+            $("#btnAs40").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(41)")) {
+            $("#btnAs41").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(42)")) {
+            $("#btnAs42").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(43)")) {
+            $("#btnAs43").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(44)")) {
+            $("#btnAs44").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(45)")) {
+            $("#btnAs45").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(46)")) {
+            $("#btnAs46").css({ 'backgroundColor': 'red' });
+        } if (asientosOcupados[j].match("(47)")) {
+            $("#btnAs47").css({ 'backgroundColor': 'red' });
+        }
+        if (asientosOcupados[j].match("(48)")) {
+            $("#btnAs48").css({ 'backgroundColor': 'red' });
+        }
+    }
+}
+
+function OnSuccess(response) {
+    alert(response);
 }
 
 function validarLugares() {
@@ -856,8 +992,7 @@ function sendDataAjax() {
             console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
         },
         success: function (data) {
-            console.log(data.d);
-            addRowDT(data.d);
+            alert(data);
         }
 
     });
