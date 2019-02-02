@@ -10,7 +10,6 @@ var asientosActivo1 = 0; var asientosActivo2 = 0; var asientosActivo3 = 0; var a
                                 asientosActivo41 = 0; var asientosActivo42 = 0; var asientosActivo43 = 0; var asientosActivo44 = 0; var asientosActivo45 = 0; var
                                     asientosActivo46 = 0; var asientosActivo47 = 0; var asientosActivo48 = 0;
 var asientosSeleccionados = [];
-var asientosSeleccionados19 = [];
 Array.prototype.unique = function (a) {
     return function () {
         return this.filter(a);
@@ -66,13 +65,13 @@ function Sumar() {
 
 function pagoAdulto() {
     var n1 = document.getElementById('cmbAdultos').value;
-    var precio = 500;
+    var precio = $("#lblPrecioAdulto").val();
     var suma = parseInt(n1) * precio;
     return suma;
 }
 
 function pagoNino() {
-    var precio = 200;
+    var precio = $("#lblPrecioNino").val();
     var n2 = document.getElementById('cmbNinos').value;
     var suma = precio * parseInt(n2);
     return suma;
@@ -105,7 +104,6 @@ $("#btnNiños").click(function () {
 });
 
 function autobus() {
-    var asientos;
     $("#tarjetaLugarViaje").addClass("animated bounceInLeft");
     $("#opcionesApartaTuLugar").addClass("animated bounceInLeft");
     $("#asientosAutobus").addClass("animated bounceInLeft");
@@ -118,147 +116,195 @@ function autobus() {
     for (var j = 0; j < asientosOcupados.length; j++) {
         if (asientosOcupados[j].match("(:1})")) {
             $("#btnAs1").css({ 'backgroundColor': 'red' });
+            $("#btnAs1").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:2})")) {
             $("#btnAs2").css({ 'backgroundColor': 'red' });
+            $("#btnAs2").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:3})")) {
             $("#btnAs3").css({ 'backgroundColor': 'red' });
+            $("#btnAs3").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:4})")) {
             $("#btnAs4").css({ 'backgroundColor': 'red' });
+            $("#btnAs4").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:5})")) {
             $("#btnAs5").css({ 'backgroundColor': 'red' });
+            $("#btnAs5").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:6})")) {
             $("#btnAs6").css({ 'backgroundColor': 'red' });
+            $("#btnAs6").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:7})")) {
             $("#btnAs7").css({ 'backgroundColor': 'red' });
+            $("#btnAs7").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:8})")) {
             $("#btnAs8").css({ 'backgroundColor': 'red' });
+            $("#btnAs8").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(:9})")) {
             $("#btnAs9").css({ 'backgroundColor': 'red' });
+            $("#btnAs9").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(10)")) {
             $("#btnAs10").css({ 'backgroundColor': 'red' });
+            $("#btnAs10").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(11)")) {
             $("#btnAs11").css({ 'backgroundColor': 'red' });
+            $("#btnAs11").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(12)")) {
             $("#btnAs12").css({ 'backgroundColor': 'red' });
+            $("#btnAs12").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(13)")) {
             $("#btnAs13").css({ 'backgroundColor': 'red' });
+            $("#btnAs13").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(14)")) {
             $("#btnAs14").css({ 'backgroundColor': 'red' });
+            $("#btnAs14").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(15)")) {
             $("#btnAs15").css({ 'backgroundColor': 'red' });
+            $("#btnAs15").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(16)")) {
             $("#btnAs16").css({ 'backgroundColor': 'red' });
+            $("#btnAs16").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(17)")) {
             $("#btnAs17").css({ 'backgroundColor': 'red' });
+            $("#btnAs17").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(18)")) {
             $("#btnAs18").css({ 'backgroundColor': 'red' });
+            $("#btnAs18").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(19)")) {
             $("#btnAs19").css({ 'backgroundColor': 'red' });
+            $("#btnAs19").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(20)")) {
             $("#btnAs20").css({ 'backgroundColor': 'red' });
+            $("#btnAs20").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(21)")) {
             $("#btnAs21").css({ 'backgroundColor': 'red' });
+            $("#btnAs21").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(22)")) {
             $("#btnAs22").css({ 'backgroundColor': 'red' });
+            $("#btnAs22").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(23)")) {
             $("#btnAs23").css({ 'backgroundColor': 'red' });
+            $("#btnAs23").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(24)")) {
             $("#btnAs24").css({ 'backgroundColor': 'red' });
+            $("#btnAs24").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(25)")) {
             $("#btnAs25").css({ 'backgroundColor': 'red' });
+            $("#btnAs25").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(26)")) {
             $("#btnAs26").css({ 'backgroundColor': 'red' });
+            $("#btnAs26").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(27)")) {
             $("#btnAs27").css({ 'backgroundColor': 'red' });
+            $("#btnAs27").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(28)")) {
             $("#btnAs28").css({ 'backgroundColor': 'red' });
+            $("#btnAs28").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(29)")) {
             $("#btnAs29").css({ 'backgroundColor': 'red' });
+            $("#btnAs29").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(30)")) {
             $("#btnAs30").css({ 'backgroundColor': 'red' });
+            $("#btnAs30").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(31)")) {
             $("#btnAs31").css({ 'backgroundColor': 'red' });
+            $("#btnAs31").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(32)")) {
             $("#btnAs32").css({ 'backgroundColor': 'red' });
+            $("#btnAs32").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(33)")) {
             $("#btnAs33").css({ 'backgroundColor': 'red' });
+            $("#btnAs33").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(34)")) {
             $("#btnAs34").css({ 'backgroundColor': 'red' });
+            $("#btnAs34").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(35)")) {
             $("#btnAs35").css({ 'backgroundColor': 'red' });
+            $("#btnAs35").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(36)")) {
             $("#btnAs36").css({ 'backgroundColor': 'red' });
+            $("#btnAs36").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(37)")) {
             $("#btnAs37").css({ 'backgroundColor': 'red' });
+            $("#btnAs37").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(38)")) {
             $("#btnAs38").css({ 'backgroundColor': 'red' });
+            $("#btnAs38").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(39)")) {
             $("#btnAs39").css({ 'backgroundColor': 'red' });
+            $("#btnAs39").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(40)")) {
             $("#btnAs40").css({ 'backgroundColor': 'red' });
+            $("#btnAs40").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(41)")) {
             $("#btnAs41").css({ 'backgroundColor': 'red' });
+            $("#btnAs41").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(42)")) {
             $("#btnAs42").css({ 'backgroundColor': 'red' });
+            $("#btnAs42").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(43)")) {
             $("#btnAs43").css({ 'backgroundColor': 'red' });
+            $("#btnAs43").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(44)")) {
             $("#btnAs44").css({ 'backgroundColor': 'red' });
+            $("#btnAs44").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(45)")) {
             $("#btnAs45").css({ 'backgroundColor': 'red' });
+            $("#btnAs45").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(46)")) {
             $("#btnAs46").css({ 'backgroundColor': 'red' });
+            $("#btnAs46").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(47)")) {
             $("#btnAs47").css({ 'backgroundColor': 'red' });
+            $("#btnAs47").prop('disabled', true);
         }
         if (asientosOcupados[j].match("(48)")) {
             $("#btnAs48").css({ 'backgroundColor': 'red' });
+            $("#btnAs48").prop('disabled', true);
         }
     }
 }
@@ -301,12 +347,12 @@ $("#btnAs1").click(function () {
     asientosActivo1++;
     if (asientosActivo1 % 2 === 0) {
         $("#btnAs1").css({ 'backgroundColor': 'transparent' });
-        var index1 = asientosSeleccionados19.indexOf("1");
-        asientosSeleccionados19.splice(index1, 1);
+        var index1 = asientosSeleccionados.indexOf("1");
+        asientosSeleccionados.splice(index1, 1);
     }
     else {
         $("#btnAs1").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("1");
+        asientosSeleccionados.push("1");
         validarLugares();
     }
 });
@@ -315,12 +361,12 @@ $("#btnAs2").click(function () {
     asientosActivo2++;
     if (asientosActivo2 % 2 === 0) {
         $("#btnAs2").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("2");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("2");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs2").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("2");
+        asientosSeleccionados.push("2");
         validarLugares();
     }
 });
@@ -329,12 +375,12 @@ $("#btnAs3").click(function () {
     asientosActivo3++;
     if (asientosActivo3 % 2 === 0) {
         $("#btnAs3").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("3");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("3");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs3").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("3");
+        asientosSeleccionados.push("3");
         validarLugares();
     }
 });
@@ -343,12 +389,12 @@ $("#btnAs4").click(function () {
     asientosActivo4++;
     if (asientosActivo4 % 2 === 0) {
         $("#btnAs4").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("4");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("4");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs4").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("4");
+        asientosSeleccionados.push("4");
         validarLugares();
     }
 });
@@ -357,12 +403,12 @@ $("#btnAs5").click(function () {
     asientosActivo5++;
     if (asientosActivo5 % 2 === 0) {
         $("#btnAs5").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("5");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("5");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs5").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("5");
+        asientosSeleccionados.push("5");
         validarLugares();
     }
 });
@@ -371,12 +417,12 @@ $("#btnAs6").click(function () {
     asientosActivo6++;
     if (asientosActivo6 % 2 === 0) {
         $("#btnAs6").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("6");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("6");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs6").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("6");
+        asientosSeleccionados.push("6");
         validarLugares();
     }
 });
@@ -385,12 +431,12 @@ $("#btnAs7").click(function () {
     asientosActivo7++;
     if (asientosActivo7 % 2 === 0) {
         $("#btnAs7").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("7");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("7");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs7").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("7");
+        asientosSeleccionados.push("7");
         validarLugares();
     }
 });
@@ -399,12 +445,12 @@ $("#btnAs8").click(function () {
     asientosActivo8++;
     if (asientosActivo8 % 2 === 0) {
         $("#btnAs8").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("8");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("8");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs8").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("8");
+        asientosSeleccionados.push("8");
         validarLugares();
     }
 });
@@ -413,12 +459,12 @@ $("#btnAs9").click(function () {
     asientosActivo9++;
     if (asientosActivo9 % 2 === 0) {
         $("#btnAs9").css({ 'backgroundColor': 'transparent' });
-        var index = asientosSeleccionados19.indexOf("9");
-        asientosSeleccionados19.splice(index, 1);
+        var index = asientosSeleccionados.indexOf("9");
+        asientosSeleccionados.splice(index, 1);
     }
     else {
         $("#btnAs9").css({ 'backgroundColor': 'green' });
-        asientosSeleccionados19.push("9");
+        asientosSeleccionados.push("9");
         validarLugares();
     }
 });
@@ -990,17 +1036,11 @@ $("#btnConfirmar").click(function () {
         '</div>' +
         '<div id="Padre"></div>');
     $("#exampleModal").modal("show");
-    for (var i = 0; i < asientosSeleccionados19.length; i++) {
-        var asiento = '<button type="button" class="btn btn-primary"><h4>Asiento <span class="badge badge-light">' + asientosSeleccionados19.unique()[i] + '</span></h4></button>';
+    for (var j = 0; j < asientosSeleccionados.length; j++) {
+        var asiento = '<button type="button" class="btn btn-primary"><h4>Asiento <span class="badge badge-light">' + asientosSeleccionados.unique()[j] + '</span></h4></button>';
         $("#Padre").append(asiento);
     }
-    for (var j = 0; j < asientosSeleccionados.length; j++) {
-        var asiento1 = '<button type="button" class="btn btn-primary"><h4>Asiento <span class="badge badge-light">' + asientosSeleccionados.unique()[j] + '</span></h4></button>';
-        $("#Padre").append(asiento1);
-    }
     var Json = JSON.stringify(asientosSeleccionados.unique());
-    var Json19 = JSON.stringify(asientosSeleccionados19.unique());
-    document.cookie = 'Asientos=' + Json + ';';
-    document.cookie = 'Asientos19=' + Json19 + ';';
+    document.cookie = 'Asientos = {"Asiento":"' + Json + '"};';
     document.cookie = 'Lugares =' + Sumar() + ';';
 });

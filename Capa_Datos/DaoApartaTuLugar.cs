@@ -92,6 +92,32 @@ namespace Capa_Datos
             conect.conectar.Close();
             return lstUsuarios;
         }
+
+        public List<PojoApartaTuLugar> getDatosViaje(int id)
+        {
+            conect.conexion();
+            List<PojoApartaTuLugar> lstUsuarios = new List<PojoApartaTuLugar>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select img, destino, costo_adulto, costo_niño as costoNino from viajes where idViaje= " + id + "; ";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = conect.conectar;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                PojoApartaTuLugar objUs = new PojoApartaTuLugar();
+                objUs.Img = dr.GetString("img");
+                objUs.Destino = dr.GetString("destino");
+                objUs.Costo_adulto = dr.GetDouble("costo_adulto");
+                objUs.CostoNino = dr.GetDouble("costoNino");
+                lstUsuarios.Add(objUs);
+            }
+            conect.conectar.Close();
+            return lstUsuarios;
+        }
+
         public int getTipoAutobus(int id)
         {
             

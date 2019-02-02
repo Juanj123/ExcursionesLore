@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="content/animate.min.css">
     <link rel="stylesheet" href="content/apartaTuLugar.css" />
     <div id="tarjetaLugarViaje" style="position:absolute; margin-left: 50%">
-        <h2 style="position: center">Guanajuato, Guanajuato</h2>
+        <h2 style="position: center"><asp:Literal ID="lblDestino" ClientIDMode="Static" runat="server" Mode="Transform">Guanajuato, Guanajuato</asp:Literal></h2>
         <div class="card" style="width: 25rem;">
             <img class="card-img-top" src="imgPrueba/pueblos-magicos-de-Guanajuato_Header.jpg" alt="Card image cap">
             <div class="card-body">
                 <h4 class="card-text">Precios:</h4>
-                <h5 class="card-text">Adulto: $500</h5>
-                <h5 class="card-text">Niño: $200</h5>
+                <h5 class="card-text">Adulto: <asp:Literal ID="lblPrecioAdulto" ClientIDMode="Static" runat="server" Mode="Transform"></asp:Literal></h5>
+                <h5 class="card-text">Niño: <asp:Literal ID="lblPrecioNino" ClientIDMode="Static" runat="server" Mode="Transform"></asp:Literal></h5>
                 <asp:LinkButton CssClass="btn btn-success" runat="server"> <i class="fas fa-info"></i> Mas Informacion</asp:LinkButton>
             </div>
         </div>
