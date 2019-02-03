@@ -63,20 +63,6 @@ function Sumar() {
     return suma;
 }
 
-function pagoAdulto() {
-    var n1 = document.getElementById('cmbAdultos').value;
-    var precio = $("#lblPrecioAdulto").val();
-    var suma = parseInt(n1) * precio;
-    return suma;
-}
-
-function pagoNino() {
-    var precio = $("#lblPrecioNino").val();
-    var n2 = document.getElementById('cmbNinos').value;
-    var suma = precio * parseInt(n2);
-    return suma;
-}
-
 function pagoTotal() {
     var n1 = document.getElementById('cmbAdultos').value;
     var n2 = document.getElementById('cmbNinos').value;

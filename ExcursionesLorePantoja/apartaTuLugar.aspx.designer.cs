@@ -22,22 +22,22 @@ namespace ExcursionesLorePantoja {
         protected global::System.Web.UI.WebControls.Literal lblDestino;
         
         /// <summary>
-        /// Control lblPrecioAdulto.
+        /// Control lblPrecioAdulto1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblPrecioAdulto;
+        protected global::System.Web.UI.WebControls.Label lblPrecioAdulto1;
         
         /// <summary>
-        /// Control lblPrecioNino.
+        /// Control lblPrecioNino1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblPrecioNino;
+        protected global::System.Web.UI.WebControls.Label lblPrecioNino1;
         
         /// <summary>
         /// Control BtnEnviar.

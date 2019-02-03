@@ -5,20 +5,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
     <link rel="stylesheet" href="content/animate.min.css">
     <link rel="stylesheet" href="content/apartaTuLugar.css" />
-    <div id="tarjetaLugarViaje" style="position:absolute; margin-left: 50%">
-        <h2 style="position: center"><asp:Literal ID="lblDestino" ClientIDMode="Static" runat="server" Mode="Transform">Guanajuato, Guanajuato</asp:Literal></h2>
+    <div id="tarjetaLugarViaje" style="position: absolute; margin-left: 50%">
+        <h2 style="position: center">
+            <asp:Literal ID="lblDestino" ClientIDMode="Static" runat="server" Mode="Transform">Guanajuato, Guanajuato</asp:Literal></h2>
         <div class="card" style="width: 25rem;">
             <img class="card-img-top" src="imgPrueba/pueblos-magicos-de-Guanajuato_Header.jpg" alt="Card image cap">
             <div class="card-body">
                 <h4 class="card-text">Precios:</h4>
-                <h5 class="card-text">Adulto: <asp:Literal ID="lblPrecioAdulto" ClientIDMode="Static" runat="server" Mode="Transform"></asp:Literal></h5>
-                <h5 class="card-text">Niño: <asp:Literal ID="lblPrecioNino" ClientIDMode="Static" runat="server" Mode="Transform"></asp:Literal></h5>
+                <h5 class="card-text">Adulto:
+                    <asp:Label ID="lblPrecioAdulto1" ClientIDMode="Static" runat="server" Mode="Transform"></asp:Label></h5>
+                <h5 class="card-text">Niño:
+                    <asp:Label ID="lblPrecioNino1" ClientIDMode="Static" runat="server" Mode="Transform"></asp:Label></h5>
                 <asp:LinkButton CssClass="btn btn-success" runat="server"> <i class="fas fa-info"></i> Mas Informacion</asp:LinkButton>
             </div>
         </div>
     </div>
     <div class="card-deck mb-3 text-center">
-        <div class="col-md-4" id="opcionesApartaTuLugar" style="margin-top:3%; margin-left:200px">
+        <div class="col-md-4" id="opcionesApartaTuLugar" style="margin-top: 3%; margin-left: 200px">
             <div class="card">
                 <div class="card-header bg-dark text-white">
                     <h4 class="my-0 font-weight-normal">Aparta Tu Lugar</h4>
@@ -41,6 +44,29 @@
                             </select>
                         </div>
                         <label id="lblAdultos" style="position: absolute; margin-left: -50px; margin-top: -50px">Total a pagar</label>
+                        <script>
+                            function pagoAdulto() {
+                                var n1 = document.getElementById('cmbAdultos').value;
+                                var precio = document.getElementById('<%=lblPrecioAdulto1.ClientID%>').innerText;
+                                var suma = parseInt(n1) * precio;
+                                return suma;
+                            }
+
+                            function pagoNino() {
+                                var precio = document.getElementById('<%=lblPrecioNino1.ClientID%>').innerText;
+                                var n2 = document.getElementById('cmbNinos').value;
+                                var suma = precio * parseInt(n2);
+                                return suma;
+                            }
+                            $("#cmbAdultos").change(function () {
+                                $("#txtTotal").val(Sumar());
+                                $("#lblTotalAdultos1").html("$" + pagoAdulto().toString());
+                            });
+                            $("#cmbNinos").change(function () {
+                                $("#txtTotal").val(Sumar());
+                                $("#lblTotalNinos1").html("$" + pagoNino().toString());
+                            });
+                        </script>
                         <h1 id="lblTotalAdultos" style="position: absolute; margin-left: 250px; margin-top: -63px"></h1>
                         <div class="container">
                             <div class="well well-sm text-center">
@@ -89,8 +115,8 @@
             <img src="img/Autobus.png" alt="">
         </div>
         <button id="btnConfirmar" type="button" class="btn btn-dark">
-        Confirmar Lugares
-    </button>
+            Confirmar Lugares
+        </button>
         <table border="1" style="margin-left: 90px; margin-top: -570px; position: absolute; z-index: auto; text-align: center;">
             <tr>
                 <td width="35" height="35">
@@ -264,27 +290,27 @@
         </div>
     </div>
     <div class="modal Reposo" tabindex="-1" role="dialog" id="ModalReposo">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: black; color: white">
-        <h5 class="modal-title">Se excedio el numero de Lugares Seleccionados</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>¡Usted excedió el número de asientos válidos para las personas que selecciono anteriormente!</p>
-          <p><b>por favor ingrese el numero de personas correctas</b></p>
-          <div id="innecesario">
-              <p id="lblLugares"><b></b></p>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="btnAceptarError">Aceptar</button>
-      </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: black; color: white">
+                    <h5 class="modal-title">Se excedio el numero de Lugares Seleccionados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¡Usted excedió el número de asientos válidos para las personas que selecciono anteriormente!</p>
+                    <p><b>por favor ingrese el numero de personas correctas</b></p>
+                    <div id="innecesario">
+                        <p id="lblLugares"><b></b></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAceptarError">Aceptar</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
     <script src="scripts/jquery-3.2.1.min.js"></script>
     <script src="scripts/internos/apartaTuLugar.js"></script>
     <script src="scripts/bootbox.min.js"></script>

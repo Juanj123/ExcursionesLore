@@ -20,14 +20,14 @@ namespace ExcursionesLorePantoja
     {
         List<int> lugares = new List<int>();
         string valores;
-        int id = 4;
+        int id = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
-            lblPrecioAdulto.Text = objDaoAparta.getDatosViaje(id)[0].Costo_adulto.ToString();
-            lblPrecioNino.Text = objDaoAparta.getDatosViaje(id)[0].CostoNino.ToString();
+            lblPrecioAdulto1.Text = objDaoAparta.getDatosViaje(id)[0].Costo_adulto.ToString();
+            lblPrecioNino1.Text = objDaoAparta.getDatosViaje(id)[0].CostoNino.ToString();
             lblDestino.Text = objDaoAparta.getDatosViaje(id)[0].Destino.ToString();
             var lista = objDaoAparta.getAsientosOcupados(id);
 
@@ -202,39 +202,80 @@ namespace ExcursionesLorePantoja
                 }
                 if (Regex.IsMatch(word, "(9)"))
                 {
+                    if (lugares.Contains(19) || lugares.Contains(29) || lugares.Contains(39))
+                    {
+                        continue;
+                    }
                     lugares.Add(9);
                 }
                 if (Regex.IsMatch(word, "(8)"))
                 {
+                    if (lugares.Contains(18) || lugares.Contains(28) || lugares.Contains(38) || lugares.Contains(48))
+                    {
+                        continue;
+                    }
                     lugares.Add(8);
                 }
                 if (Regex.IsMatch(word, "(7)"))
                 {
+                    if (lugares.Contains(17) || lugares.Contains(27) || lugares.Contains(37) || lugares.Contains(47))
+                    {
+                        continue;
+                    }
                     lugares.Add(7);
                 }
                 if (Regex.IsMatch(word, "(6)"))
                 {
+                    if (lugares.Contains(16) || lugares.Contains(26) || lugares.Contains(36) || lugares.Contains(46))
+                    {
+                        continue;
+                    }
                     lugares.Add(6);
                 }
                 if (Regex.IsMatch(word, "(5)"))
                 {
+                    if (lugares.Contains(15) || lugares.Contains(25) || lugares.Contains(35) || lugares.Contains(45))
+                    {
+                        continue;
+                    }
                     lugares.Add(5);
                 }
                 if (Regex.IsMatch(word, "(4)"))
                 {
+                    if (lugares.Contains(40) || lugares.Contains(41) || lugares.Contains(42) || lugares.Contains(43)
+                        || lugares.Contains(44) || lugares.Contains(45) || lugares.Contains(46) || lugares.Contains(47)
+                        || lugares.Contains(48) || lugares.Contains(14) || lugares.Contains(24) || lugares.Contains(34))
+                    {
+                        continue;
+                    }
                     lugares.Add(4);
                 }
                 if (Regex.IsMatch(word, "(3)"))
                 {
+                    if (lugares.Contains(30) || lugares.Contains(31) || lugares.Contains(32) || lugares.Contains(33)
+                        || lugares.Contains(34) || lugares.Contains(35) || lugares.Contains(36) || lugares.Contains(37)
+                        || lugares.Contains(38) || lugares.Contains(39) || lugares.Contains(13) || lugares.Contains(43))
+                    {
+                        continue;
+                    }
                     lugares.Add(3);
                 }
                 if (Regex.IsMatch(word, "(2)"))
                 {
+                    if (lugares.Contains(20) || lugares.Contains(21) || lugares.Contains(22) || lugares.Contains(23)
+                        || lugares.Contains(24) || lugares.Contains(25) || lugares.Contains(26) || lugares.Contains(27)
+                        || lugares.Contains(28) || lugares.Contains(29)|| lugares.Contains(12)|| lugares.Contains(32)
+                        || lugares.Contains(42))
+                    {
+                        continue;
+                    }
                     lugares.Add(2);
                 }
                 if (Regex.IsMatch(word, "(1)"))
                 {
-                    if (lugares.Contains(12))
+                    if (lugares.Contains(10)|| lugares.Contains(11)|| lugares.Contains(12)|| lugares.Contains(13)
+                        || lugares.Contains(14)|| lugares.Contains(15)|| lugares.Contains(16)|| lugares.Contains(17)
+                        || lugares.Contains(18)|| lugares.Contains(19))
                     {
                         continue;
                     }
