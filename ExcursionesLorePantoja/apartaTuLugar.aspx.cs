@@ -294,6 +294,7 @@ namespace ExcursionesLorePantoja
             }
             objDaoAparta.registrarReservacion(objAparta);
             objDaoAparta.registrarReservacionUsuario(objAparta);
+            Response.Redirect("apartaTuLugar.aspx");
         }
         [WebMethod]
         public static void asientos()

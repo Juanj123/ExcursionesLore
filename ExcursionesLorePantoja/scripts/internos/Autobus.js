@@ -4,7 +4,7 @@
     $("#asientosAutobus").addClass("animated bounceInLeft");
     $("#tarjetaLugarViaje").css({ 'position': 'absolute', 'margin-left': '65%', 'margin-top': '1px' });
     $("#opcionesApartaTuLugar").css({ 'position': 'absolute', 'margin-left': '30%', 'margin-top': '5%' });
-    AutobusIrizar();
+    AutobusVolvo();
     $("#asientosAutobus").css({ 'display': 'block' });
     $("#btnSelectAsientos").css({ 'display': 'none' });
     var asientosOcupados;
@@ -213,7 +213,7 @@ function AutobusVolvo() {
     $("#pegaAquiAutobus").html(
         '<div id="asientosAutobus" style="display: none">' +
         '<div class="col-md-2" style="margin-top: 1%; margin-left: 50px">' +
-        '<img src="img/Autobus.png" alt="">' +
+        '<img src="img/Autobus-Volvo.png" />' +
         '</div>' +
         '<button id="btnConfirmar" type="button" class="btn btn-dark">' +
         'Confirmar Lugares' +

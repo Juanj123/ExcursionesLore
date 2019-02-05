@@ -159,6 +159,7 @@
     <Content Include="Global.asax" />
     <Content Include="imgPrueba\pueblos-magicos-de-Guanajuato_Header.jpg" />
     <Content Include="img\Autobus-Irizar.png" />
+    <Content Include="img\Autobus-Volvo.png" />
     <Content Include="img\Autobus.png" />
     <Content Include="img\beach-1236581.jpg" />
     <Content Include="img\benches.jpg" />

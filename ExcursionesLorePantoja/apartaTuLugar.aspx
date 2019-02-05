@@ -43,6 +43,7 @@
                                 <option>10</option>
                             </select>
                         </div>
+                        
                         <label id="lblAdultos" style="position: absolute; margin-left: -50px; margin-top: -50px">Total a pagar</label>
                         <script>
                             function pagoAdulto() {
