@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="asientos.cs" />
+    <Compile Include="PojoApartaTuLugar.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="PojoGaleria.cs" />
     <Compile Include="pojoMostrarGaleria.cs" />
