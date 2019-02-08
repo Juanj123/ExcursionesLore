@@ -26,10 +26,15 @@ namespace ExcursionesLorePantoja
         {
             List<PojoVideo> listPojo = new List<PojoVideo>();
             listPojo = daoVideo.obtenerVideo();
-            for (int i=0; i<listPojo.Count(); i++)
+            for (int i = 0; i < listPojo.Count(); i++)
             {
-                ltVideo.Text = "<iframe class='d - block w - 100' width='800' height='400' src='" + listPojo[i].Url + "' frameborder='0' allow='accelerometer; autoplay; encrypted - media; gyroscope; picture -in-picture' allowfullscreen></iframe>";
-                //ltVideo.Text = "<iframe class='d - block w - 100' width='800' height='400' src='https://youtu.be/DkeiKbqa02g?list=RDGzU8KqOY8YA' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen class='col-12'></iframe>";
+                if (listPojo[i].Estado.Equals("Activo"))
+                {
+                    ltVideo.Text = "<iframe class='d - block w - 100 col-12' width='800' height='400' src='" + listPojo[i].Url + "' frameborder='0' allow='accelerometer; autoplay; encrypted - media; gyroscope; picture -in-picture' allowfullscreen></iframe>";
+                    //ltVideo.Text = "<iframe class='d - block w - 100' width='800' height='400' src='https://youtu.be/DkeiKbqa02g?list=RDGzU8KqOY8YA' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen class='col-12'></iframe>";
+
+                    i = listPojo.Count();
+                }
             }
             
         }
@@ -58,6 +63,33 @@ namespace ExcursionesLorePantoja
                 lista = null;
             }
             return lista;
+        }
+
+        [WebMethod]
+        public static bool ActualizarVideo(string nombre, string url, string estado)
+        {
+
+            DaoVideo daoVideo = new DaoVideo();
+            PojoVideo pojoVideo = new PojoVideo()
+            {
+                IdVideo = daoVideo.obtenerID(url),
+                IdUsuario = daoVideo.obtenerIdUsuario(url),
+                Nombre = nombre,
+                Estado = estado,
+                Url = url
+                
+            };
+            bool ok = daoVideo.modificar(pojoVideo);
+            return ok;
+        }
+
+        [WebMethod]
+        public static bool EliminarDatos(string id)
+        {
+            DaoVideo daoVideo = new DaoVideo();
+            int idVideo = Convert.ToInt32(daoVideo.obtenerID(id));
+            bool ok = daoVideo.Eliminar(idVideo);
+            return ok;
         }
     }
 }

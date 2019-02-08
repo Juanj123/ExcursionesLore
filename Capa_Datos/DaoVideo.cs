@@ -25,7 +25,7 @@ namespace Capa_Datos
                 MySqlCommand cm = new MySqlCommand();
                 MySqlDataReader dr;
                 conec.conexion();
-                string sql = " select * from principalvideo where idVideo=12 and estado like 'Activo'";
+                string sql = " select * from principalvideo where estado like 'Activo'";
                 cm.CommandText = sql;
                 cm.CommandType = CommandType.Text;
                 cm.Connection = conec.conectar;
@@ -107,6 +107,133 @@ namespace Capa_Datos
             return "Guardado";
 
         }
+
+
+        public bool modificar(PojoVideo Alma)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+
+            try {
+                conec.conexion();
+
+                cmd.Parameters.AddWithValue("@idVideo", Alma.IdVideo);
+                cmd.Parameters.AddWithValue("@idUsuario", Alma.IdUsuario);
+                cmd.Parameters.AddWithValue("@nombre", Alma.Nombre);
+                cmd.Parameters.AddWithValue("@estado", Alma.Estado);
+                cmd.Parameters.AddWithValue("@url", Alma.Url);
+                string consul = "update principalVideo set  idUsuario=@idUsuario, nombre=@nombre, estado=@estado, url=@url where idVideo=@idVideo";
+                cmd.CommandText = consul;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conec.conectar;
+                cmd.ExecuteNonQuery();
+                
+                return true;
+
+            } catch {
+                return true;
+            } finally {
+                conec.conectar.Close();
+                conec.conectar.Close();
+            }
+           
+        }
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                conec.conexion();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conec.conectar;
+                cmd.Parameters.AddWithValue("@id", id.ToString());
+                cmd.CommandText = "delete from principalVideo where idVideo = @id";
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception exc)
+            {
+                return false;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+
+        }
+
+        public int obtenerID(string nombre)
+        {
+            int id = 0;
+            try
+            {
+                string sql = "";
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                sql = "select idVideo from principalVideo where url like '" + nombre.ToString() + "'";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    id = dr.GetInt32("idVideo");
+                return id;
+                }
+                else
+                {
+               
+                return id;
+                }
+            }
+            catch (Exception exc)
+            {
+                return id;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
+        public int obtenerIdUsuario(string nombre)
+        {
+            int id = 0;
+            try
+            {
+                string sql = "";
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                sql = "select idUsuario from principalVideo where url = '" + nombre.ToString() + "'";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    id = dr.GetInt32("idUsuario");
+                    return id;
+                }
+                else
+                {
+                    return id;
+                }
+            }
+            catch (Exception exc)
+            {
+                return id;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
 
     }
 }

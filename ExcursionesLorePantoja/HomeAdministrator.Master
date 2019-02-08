@@ -4,16 +4,7 @@
 
 <html>
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="content/Boostrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="scripts/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
-    <link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="content/sweetalert.css" rel="stylesheet" />
-
-    <link href="content/estilosMaster.css" rel="stylesheet" />
-    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
     <title></title>
 
 
@@ -24,6 +15,17 @@
 
 </head>
 <body>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/content/Boostrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="/scripts/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+    <%--<link href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />--%>
+    <link href="/content/sweetalert.css" rel="stylesheet" />
+
+    <link href="/content/estilosMaster.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>
+
     <div class="container col-md-12 col-lg-12 col-sm-12 col-xl-12">
 
         <div class="row">
@@ -31,26 +33,22 @@
 
                 <nav class="navbar navbar-expand-lg navbar-dark">
 
-                    <a class="navbar-brand" href="PrincipalUsers.aspx">
+                    <a class="navbar-brand" href="PrincipalUsers.aspx" style="font-size:25px">
                         <img src="img/Niña.png" style="bottom: 20px; right: 20px; width: 60px; height: 60px; background-size: cover;" />
-                        Excursiones</a>
+                        Excursiones"LORE PANTOJA</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                            <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>Buscar</button>
-                        </form>
 
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <ul class="navbar-nav">
                             <li class="nav-item ">
                                 <a class="nav-link" href="#"><i class="fas fa-suitcase"></i>Viajes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Galeria.aspx"><i class="fas fa-camera-retro"></i>Galeria</a>
+                                <a class="nav-link" href="PrincipalGaleria.aspx"><i class="fas fa-camera-retro"></i>Galeria</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="far fa-money-bill-alt"></i>Promociones</a>
@@ -63,7 +61,7 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Principal</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-home"></i> Principal</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                     <a class="dropdown-item" href="PrincipalVideo.aspx">Video</a>
                                     <a class="dropdown-item" href="#">Carrousel</a>
@@ -99,8 +97,9 @@
         <div>
             <asp:ContentPlaceHolder ID="bod" runat="server">
             </asp:ContentPlaceHolder>
-            <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+            
         </div>
+        </form>
         <br />
         <br />
 
@@ -154,11 +153,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="form-group col-sm-6">
+                                    <div class="form-group">
                                         <label for="name" class="h4">Nombre</label>
                                         <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre">
                                     </div>
-                                    <div class="form-group col-sm-6">
+                                    <div class="form-group">
                                         <label for="email" class="h4">Correo</label>
                                         <input type="email" class="form-control" id="email" placeholder="Ingrese correo electrónico">
                                     </div>
@@ -178,7 +177,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    
     <%--footer--%>
 
     <script src="scripts/jquery-3.2.1.min.js"></script>
@@ -186,10 +185,10 @@
     <script src="scripts/bootstrap/bootstrap.min.js"></script>
     <script src="scripts/datatables/datatables.min.js"></script>
     <script src="scripts/datatables/dataTables.bootstrap4.js"></script>
-    <script src="scripts/datatables/groups.js"></script>
+     
     <script src="scripts/sweetalert.min.js"></script>
+     <%--<script src="scripts/Galeria.js"></script>--%>
 
-     <script src="scripts/video.js"></script>
     <script src="scripts/jquery.scrollUp.js"></script>
     <script>
         $(function () {
@@ -198,6 +197,7 @@
             });
         });
     </script>
+    <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>
 

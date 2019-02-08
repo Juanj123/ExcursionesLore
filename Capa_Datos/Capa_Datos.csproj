@@ -49,6 +49,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="cone.cs" />
     <Compile Include="Configuracion.cs" />
+    <Compile Include="DaoGaleria.cs" />
+    <Compile Include="DaoPrincipal.cs" />
+    <Compile Include="DaoPrincipalGaleria.cs" />
     <Compile Include="DaoVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

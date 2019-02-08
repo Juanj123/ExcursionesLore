@@ -69,6 +69,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarGaleria.aspx" />
+    <Content Include="AgregarPrincipalGaleria.aspx" />
     <Content Include="agregarVideo.aspx" />
     <Content Include="apartaTuLugar.aspx" />
     <Content Include="Clientes.aspx" />
@@ -148,6 +150,7 @@
     <Content Include="content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="ControlAbonosAdmin.aspx" />
     <Content Include="ControlAbonosUsuarios.aspx" />
+    <Content Include="Descripcion.aspx" />
     <Content Include="Galeria.aspx" />
     <Content Include="imgPrueba\pueblos-magicos-de-Guanajuato_Header.jpg" />
     <Content Include="img\Autobus.png" />
@@ -169,6 +172,8 @@
     <Content Include="login.aspx" />
     <Content Include="PerfilUsuario.aspx" />
     <Content Include="Principal.aspx" />
+    <Content Include="GaleriaAdministrator.aspx" />
+    <Content Include="PrincipalGaleria.aspx" />
     <Content Include="PrincipalUsers.aspx" />
     <Content Include="PrincipalVideo.aspx" />
     <Content Include="scripts\autocomplete.combobox.js" />
@@ -185,6 +190,7 @@
     <Content Include="scripts\datatables\groups.js" />
     <Content Include="scripts\dialogos.js" />
     <Content Include="scripts\dialogosjQuery.js" />
+    <Content Include="scripts\Galeria.js" />
     <Content Include="scripts\internos\apartaTuLugar.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
     <Content Include="scripts\jquery-3.2.1.min.js" />
@@ -198,6 +204,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarGaleria.aspx.cs">
+      <DependentUpon>AgregarGaleria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarGaleria.aspx.designer.cs">
+      <DependentUpon>AgregarGaleria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarPrincipalGaleria.aspx.cs">
+      <DependentUpon>AgregarPrincipalGaleria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarPrincipalGaleria.aspx.designer.cs">
+      <DependentUpon>AgregarPrincipalGaleria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="agregarVideo.aspx.cs">
       <DependentUpon>agregarVideo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,6 +252,13 @@
     </Compile>
     <Compile Include="ControlAbonosUsuarios.aspx.designer.cs">
       <DependentUpon>ControlAbonosUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Descripcion.aspx.cs">
+      <DependentUpon>Descripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descripcion.aspx.designer.cs">
+      <DependentUpon>Descripcion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Galeria.aspx.cs">
       <DependentUpon>Galeria.aspx</DependentUpon>
@@ -274,6 +301,20 @@
     </Compile>
     <Compile Include="Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GaleriaAdministrator.aspx.cs">
+      <DependentUpon>GaleriaAdministrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GaleriaAdministrator.aspx.designer.cs">
+      <DependentUpon>GaleriaAdministrator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalGaleria.aspx.cs">
+      <DependentUpon>PrincipalGaleria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrincipalGaleria.aspx.designer.cs">
+      <DependentUpon>PrincipalGaleria.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrincipalUsers.aspx.cs">
       <DependentUpon>PrincipalUsers.aspx</DependentUpon>
