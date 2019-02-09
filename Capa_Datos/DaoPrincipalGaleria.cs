@@ -146,7 +146,7 @@ namespace Capa_Datos
                 while (dr.Read())
                 {
                     pojoAmbu = new PojoPrincipal();
-                    pojoAmbu.IdPrincipal = dr.GetInt32("idVideo");
+                    pojoAmbu.IdPrincipal = dr.GetInt32("idPrincipal");
                     concep.Add(pojoAmbu);
                 }
                 return concep;

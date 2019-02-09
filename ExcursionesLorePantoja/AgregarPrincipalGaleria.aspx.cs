@@ -12,6 +12,9 @@ namespace ExcursionesLorePantoja
 {
     public partial class AgregarPrincipalGaleria : System.Web.UI.Page
     {
+        DaoPrincipalGaleria daoPrincipalGaleria = new DaoPrincipalGaleria();
+        PojoPrincipalGaleria pojoPrincipalGaleria = new PojoPrincipalGaleria();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             cardarDatos();
@@ -19,26 +22,28 @@ namespace ExcursionesLorePantoja
 
         public void cardarDatos()
         {
+
             List<PojoPrincipal> ltPrincipal = new List<PojoPrincipal>();
 
             ltPrincipal = daoPrincipalGaleria.obtenerIdPrincipal();
 
-            for (int i=0; i < ltPrincipal.Count(); i++)
+            for (int i = 0; i < ltPrincipal.Count(); i++)
             {
-                dpdlIdDescripcion.SelectedItem.Text = Convert.ToString(ltPrincipal[i].IdPrincipal);
+                dpdlIdDescripcion.Items.Add(Convert.ToString(ltPrincipal[i].IdPrincipal));
             }
 
         }
-        DaoPrincipalGaleria daoPrincipalGaleria = new DaoPrincipalGaleria();
-        PojoPrincipalGaleria pojoPrincipalGaleria = new PojoPrincipalGaleria();
+        
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            string ruta = "~/img/imgGaleria";
-            string rutaDestino = string.Empty;
-            string rutaExtension = string.Empty;
+            string ruta = "";
+            bool existe;
+            ruta = Server.MapPath("~/img/imgGaleria");
+            existe = Directory.Exists(ruta);
+
             try
             {
-                if (!Directory.Exists(ruta))
+                if (!existe)
                 {
                     Directory.CreateDirectory(ruta);
                 }
@@ -48,38 +53,49 @@ namespace ExcursionesLorePantoja
 
             if (FileUpload1.HasFile)
             {
-                rutaDestino += FileUpload1.PostedFile;
-                rutaDestino += "\\";
-                rutaDestino += FileUpload1.FileName;
-                rutaExtension = Path.GetExtension(rutaDestino);
+                // se obtiene la extension y el tamaño para delimitar
+                string ext = Path.GetExtension(FileUpload1.FileName);
+                ext = ext.ToLower();
 
-                string rt = ruta +"\\" + FileUpload1.FileName;
+                int tam = FileUpload1.PostedFile.ContentLength;
+                
+
+               
                 try
                 {
                     //si la ruta existe en imgGaleria 
                     //guardar en principalGaleria
                     //si no guardar en imgGaleria y en principalGaleria
-
-                    if (daoPrincipalGaleria.obtenerIdGaleria(rt))
+                    if (ext == ".png" && tam <= 1048576)
                     {
-                        pojoPrincipalGaleria.IdGaleria = daoPrincipalGaleria.obtenerID(rt);
-                        pojoPrincipalGaleria.IdPrincipal = 1;
-                        pojoPrincipalGaleria.Img = rt;
-                        daoPrincipalGaleria.insertar(pojoPrincipalGaleria);
+                        FileUpload1.SaveAs(Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName));
+                        string path = Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName);
 
-                    }
-                    else
-                    {
-                        if (rutaExtension.ToUpper() != ".JPG" && rutaExtension.ToUpper() != ".JPEG")
+                        if (daoPrincipalGaleria.obtenerIdGaleria(path))
                         {
-                            FileUpload1.SaveAs(ruta + "\\" + FileUpload1.FileName);
+                            pojoPrincipalGaleria.IdGaleria = daoPrincipalGaleria.obtenerID(path);
+                            pojoPrincipalGaleria.IdPrincipal = Convert.ToInt32(dpdlIdDescripcion.SelectedItem.Text);
+                            pojoPrincipalGaleria.Img = path;
+                            daoPrincipalGaleria.insertar(pojoPrincipalGaleria);
+
                         }
-                        
-                        pojoPrincipalGaleria.IdGaleria = daoPrincipalGaleria.obtenerID(rt);
-                        pojoPrincipalGaleria.IdPrincipal = 1;
-                        pojoPrincipalGaleria.Img = rt;
-                        daoPrincipalGaleria.insertar(pojoPrincipalGaleria);
+                        else
+                        {
+
+                           
+                                FileUpload1.SaveAs(Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName));
+
+                                pojoPrincipalGaleria.IdGaleria = daoPrincipalGaleria.obtenerID(path);
+                                pojoPrincipalGaleria.IdPrincipal = Convert.ToInt32(dpdlIdDescripcion.SelectedItem.Text);
+                                pojoPrincipalGaleria.Img = path;
+                                daoPrincipalGaleria.insertar(pojoPrincipalGaleria);
+                            
+
+
+                        }
                     }
+
+                       
                 } catch { }
 
             }

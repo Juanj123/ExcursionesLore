@@ -20,8 +20,8 @@ function addRowDT(data)
             data[i].Nombre,
             data[i].Estado,
             data[i].Url,
-            '<button value="Actualizar" title="Actualizar" class="btn btn-primary btn-edit col-5" data-target="#exampleModalCenter" data-toggle="modal">Actualizar</button>&nbsp;'+
-            '<button value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete col-5">Eliminar</button>'
+            '<button value="Actualizar" title="Actualizar" class="btn btn-primary btn-edit" data-target="#exampleModalCenter" data-toggle="modal">Actualizar</button>&nbsp;'+
+            '<button value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete">Eliminar</button>'
         ]);
     }
 }
@@ -100,14 +100,16 @@ function deleteDataAjax(data) {
 }
 
 
-$(document).on('click()', '.btn-edit', function (e) {
+// evento click para boton actualizar
+$(document).on('click', '.btn-edit', function (e) {
     e.preventDefault();
+
     var row = $(this).parent().parent()[0];
     data = tabla.fnGetData(row);
     fillModalData();
 
-
 });
+
 
 $(document).on('click', '.btn-delete', function (e) {
     e.preventDefault();
@@ -129,10 +131,8 @@ function fillModalData() {
 }
 
 
-
-//enviar informacion al servidor 
-$("#btnActualizar").click(function(e)
-{
+// enviar la informacion al servidor
+$("#btnactualizar").click(function (e) {
     e.preventDefault();
     updateDataAjax();
 });

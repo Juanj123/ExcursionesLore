@@ -27,4 +27,5 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">   
+    <script src="scripts/Galeria.js"></script>
 </asp:Content>

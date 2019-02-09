@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 using Capa_Pojos;
 using MySql.Data.MySqlClient;
 using MySql.Web;
 using System.Data;
 
+
 namespace Capa_Datos
 {
     public class DaoGaleria
     {
+
         cone conec = new cone();
 
         public string insertar(PojoGaleria pojoGaleria)
