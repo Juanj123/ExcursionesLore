@@ -48,7 +48,7 @@
                                 <a class="nav-link" href="#"><i class="fas fa-suitcase"></i>Viajes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="PrincipalGaleria.aspx"><i class="fas fa-camera-retro"></i>Galeria</a>
+                                <a class="nav-link" href="GaleriaAdministrator.aspx"><i class="fas fa-camera-retro"></i>Galeria</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="far fa-money-bill-alt"></i>Promociones</a>
@@ -64,7 +64,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-home"></i> Principal</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                     <a class="dropdown-item" href="PrincipalVideo.aspx">Video</a>
-                                    <a class="dropdown-item" href="#">Carrousel</a>
+                                    <a class="dropdown-item" href="PrincipalGaleria.aspx">Carrousel</a>
                                     <a class="dropdown-item" href="#">Imagen</a>
                                     <a class="dropdown-item" href="#">Ofertas</a>
                                 </div>
@@ -187,7 +187,7 @@
     <script src="scripts/datatables/dataTables.bootstrap4.js"></script>
      
     <script src="scripts/sweetalert.min.js"></script>
-     <%--<script src="scripts/Galeria.js"></script>--%>
+
 
     <script src="scripts/jquery.scrollUp.js"></script>
     <script>

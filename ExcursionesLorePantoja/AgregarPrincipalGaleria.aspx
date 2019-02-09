@@ -9,6 +9,8 @@
                 <asp:DropDownList runat="server" ID="dpdlIdDescripcion">
                 </asp:DropDownList>
 
+                <br />
+                <br />
                 <asp:Label runat="server" Text="Direccion de imagen"></asp:Label>
                 <asp:FileUpload ID="FileUpload1" runat="server"   />
                 

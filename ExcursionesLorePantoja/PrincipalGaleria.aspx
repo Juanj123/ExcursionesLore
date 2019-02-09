@@ -43,6 +43,7 @@
                 </div>
 
                 <br />
+                <asp:Button runat="server" ID="btnDescripcion" Text="Agregar Descripción" CssClass="btn btn-success" OnClick="btnDescripcion_Click" />
                 <br />
                 <%--tabla de imagenes para el carousel--%>
                 <h2>Imagenes del Carousel</h2>
@@ -53,8 +54,7 @@
                     <thead class=" text-white" style="background-color: #c3497f;">
 
                         <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Estado</th>
+                            <th scope="col">Titulo</th>
                             <th scope="col">Ruta</th>
                             <th scope="col">Acciones</th>
 
@@ -66,12 +66,49 @@
                     <tbody>
                     </tbody>
                 </table>
+                <%--modal--%>
+                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Seleccionar Imagen</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                 <div class="form-group">
+                                    <asp:Label runat="server" Text="Numero de descripción"></asp:Label>
+                                    <asp:DropDownList runat="server" ID="dpdlIdDescripcion" CssClass="form-control">
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label runat="server" Text="Titulo"></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtTitulo" ReadOnly="true" CssClass="form-control" placeholder="Titulo"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <asp:Label runat="server" Text="Ruta"></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtRuta" ReadOnly="true" CssClass="form-control" placeholder="Ruta"></asp:TextBox>
+                                </div>
+                               <div class="form-group">
+                                    <img id="imgGale" src="#" alt="Second slide" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" id="btnSeleccionar">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
+    
 
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="scripts/PrincipalGaleria.js"></script>
 </asp:Content>

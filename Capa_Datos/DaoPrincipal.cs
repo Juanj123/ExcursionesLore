@@ -126,6 +126,42 @@ namespace Capa_Datos
             }
         }
 
-        
+        public List<PojoPrincipal> obtenerPrincipal()
+        {
+
+            try
+            {
+
+                List<PojoPrincipal> concep = new List<PojoPrincipal>();
+                PojoPrincipal pojoAmbu;
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                string sql = " select idPrincipal, description from principal";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    pojoAmbu = new PojoPrincipal();
+                    pojoAmbu.IdPrincipal = dr.GetInt32("idPrincipal");
+                    pojoAmbu.Descripcion = dr.GetString("description");
+                    concep.Add(pojoAmbu);
+                }
+                return concep;
+            }
+            catch (Exception exc)
+            {
+                return null;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
+
     }
 }
