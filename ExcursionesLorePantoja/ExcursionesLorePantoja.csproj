@@ -71,10 +71,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarAutobus.aspx" />
     <Content Include="AgregarGaleria.aspx" />
+    <Content Include="AgregarImagen.aspx" />
     <Content Include="AgregarPrincipalGaleria.aspx" />
+    <Content Include="AgregarViaje.aspx" />
     <Content Include="agregarVideo.aspx" />
     <Content Include="apartaTuLugar.aspx" />
+    <Content Include="Autobus.aspx" />
     <Content Include="Clientes.aspx" />
     <Content Include="content\animate.min.css" />
     <Content Include="content\apartaTuLugar.css" />
@@ -155,6 +159,7 @@
     <Content Include="Descripcion.aspx" />
     <Content Include="Galeria.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagen.aspx" />
     <Content Include="imgPrueba\pueblos-magicos-de-Guanajuato_Header.jpg" />
     <Content Include="img\Autobus-Irizar.png" />
     <Content Include="img\Autobus-Volvo.png" />
@@ -182,6 +187,7 @@
     <Content Include="PrincipalGaleria.aspx" />
     <Content Include="PrincipalUsers.aspx" />
     <Content Include="PrincipalVideo.aspx" />
+    <Content Include="scripts\Autobus.js" />
     <Content Include="scripts\autocomplete.combobox.js" />
     <Content Include="scripts\bootbox.min.js" />
     <Content Include="scripts\bootstrap\bootstrap.bundle.js" />
@@ -198,6 +204,8 @@
     <Content Include="scripts\dialogos.js" />
     <Content Include="scripts\dialogosjQuery.js" />
     <Content Include="scripts\Galeria.js" />
+    <Content Include="scripts\AgregarImagen.js" />
+    <Content Include="scripts\Imagen.js" />
     <Content Include="scripts\internos\apartaTuLugar.js" />
     <Content Include="scripts\internos\Autobus.js" />
     <Content Include="scripts\jquery-3.2.1.js" />
@@ -210,10 +218,19 @@
     <Content Include="scripts\smooth-scroll.min.js" />
     <Content Include="scripts\sweetalert.min.js" />
     <Content Include="scripts\util.js" />
+    <Content Include="scripts\Viajes.js" />
     <Content Include="scripts\video.js" />
+    <Content Include="ViajesAdmin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarAutobus.aspx.cs">
+      <DependentUpon>AgregarAutobus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarAutobus.aspx.designer.cs">
+      <DependentUpon>AgregarAutobus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarGaleria.aspx.cs">
       <DependentUpon>AgregarGaleria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,12 +238,26 @@
     <Compile Include="AgregarGaleria.aspx.designer.cs">
       <DependentUpon>AgregarGaleria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AgregarImagen.aspx.cs">
+      <DependentUpon>AgregarImagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarImagen.aspx.designer.cs">
+      <DependentUpon>AgregarImagen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarPrincipalGaleria.aspx.cs">
       <DependentUpon>AgregarPrincipalGaleria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AgregarPrincipalGaleria.aspx.designer.cs">
       <DependentUpon>AgregarPrincipalGaleria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarViaje.aspx.cs">
+      <DependentUpon>AgregarViaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarViaje.aspx.designer.cs">
+      <DependentUpon>AgregarViaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="agregarVideo.aspx.cs">
       <DependentUpon>agregarVideo.aspx</DependentUpon>
@@ -241,6 +272,13 @@
     </Compile>
     <Compile Include="apartaTuLugar.aspx.designer.cs">
       <DependentUpon>apartaTuLugar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Autobus.aspx.cs">
+      <DependentUpon>Autobus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autobus.aspx.designer.cs">
+      <DependentUpon>Autobus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clientes.aspx.cs">
       <DependentUpon>Clientes.aspx</DependentUpon>
@@ -293,6 +331,13 @@
     </Compile>
     <Compile Include="HomeUsers.Master.designer.cs">
       <DependentUpon>HomeUsers.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Imagen.aspx.cs">
+      <DependentUpon>Imagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Imagen.aspx.designer.cs">
+      <DependentUpon>Imagen.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -350,6 +395,13 @@
     </Compile>
     <Compile Include="Home.Master.designer.cs">
       <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViajesAdmin.aspx.cs">
+      <DependentUpon>ViajesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViajesAdmin.aspx.designer.cs">
+      <DependentUpon>ViajesAdmin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

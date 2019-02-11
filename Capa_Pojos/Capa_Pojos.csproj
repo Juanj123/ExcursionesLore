@@ -47,11 +47,14 @@
     <Compile Include="asientos.cs" />
     <Compile Include="PojoApartaTuLugar.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="PojoAutobus.cs" />
     <Compile Include="PojoGaleria.cs" />
+    <Compile Include="PojoImagen.cs" />
     <Compile Include="pojoMostrarGaleria.cs" />
     <Compile Include="pojoMostrarVideo.cs" />
     <Compile Include="PojoPrincipal.cs" />
     <Compile Include="PojoPrincipalGaleria.cs" />
+    <Compile Include="PojoViaje.cs" />
     <Compile Include="PojoVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

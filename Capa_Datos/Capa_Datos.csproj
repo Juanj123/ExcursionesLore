@@ -49,9 +49,12 @@
     <Compile Include="cone.cs" />
     <Compile Include="Configuracion.cs" />
     <Compile Include="DaoApartaTuLugar.cs" />
+    <Compile Include="DaoAutobus.cs" />
     <Compile Include="DaoGaleria.cs" />
+    <Compile Include="DaoImagen.cs" />
     <Compile Include="DaoPrincipal.cs" />
     <Compile Include="DaoPrincipalGaleria.cs" />
+    <Compile Include="DaoViaje.cs" />
     <Compile Include="DaoVideo.cs" />
     <Compile Include="DatosLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
