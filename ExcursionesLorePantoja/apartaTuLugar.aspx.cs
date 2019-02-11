@@ -24,13 +24,12 @@ namespace ExcursionesLorePantoja
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            litModal.Visible = true;
             DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
             lblPrecioAdulto1.Text = objDaoAparta.getDatosViaje(id)[0].Costo_adulto.ToString();
             lblPrecioNino1.Text = objDaoAparta.getDatosViaje(id)[0].CostoNino.ToString();
             lblDestino.Text = objDaoAparta.getDatosViaje(id)[0].Destino.ToString();
             var lista = objDaoAparta.getAsientosOcupados(id);
-
             var Json = JsonConvert.SerializeObject(lista);
             Response.Cookies["asientosAutobus"].Value = Json;
         }

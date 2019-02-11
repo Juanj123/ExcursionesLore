@@ -20,6 +20,7 @@ Array.prototype.unique = function (a) {
     });
 
 $(document).ready(function () {
+    $("#Validacion").modal("show");
     $("#txtTotal").val(Sumar());
     $("#lblTotalNinos").html("$" + pagoNino().toString());
     $("#lblTotalAdultos").html("$" + pagoAdulto().toString());
@@ -144,4 +145,3 @@ $("#btnConfirmar").click(function () {
     document.cookie = 'Asientos = {"Asiento":"' + Json + '"};';
     document.cookie = 'Lugares =' + Sumar() + ';';
 });
-
