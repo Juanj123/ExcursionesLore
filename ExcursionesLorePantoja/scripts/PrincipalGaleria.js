@@ -78,7 +78,7 @@ $(document).on('click', '.btn-edit', function (e) {
 function fillModalData() {
     $("#txtTitulo").val(data[0]);
     $("#txtRuta").val(data[1]);
-    $("imgGale").attr("src",data[1]);
+    //$("#imgGale").attr("src",data[1]);  
 }
 
 

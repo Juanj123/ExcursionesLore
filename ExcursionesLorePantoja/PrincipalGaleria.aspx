@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeAdministrator.Master" AutoEventWireup="true" CodeBehind="PrincipalGaleria.aspx.cs" Inherits="ExcursionesLorePantoja.PrincipalGaleria1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeAdministrator.Master" AutoEventWireup="true" CodeBehind="PrincipalGaleria.aspx.cs" Inherits="ExcursionesLorePantoja.PrincipalGaleria1" ClientIDMode="Static" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
-    <div class="container col-md-12 col-lg-12 col-sm-12 col-xl-12">
+    <div class="container">
         <div class="row">
 
             <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
