@@ -32,7 +32,7 @@ namespace ExcursionesLorePantoja
                 {
                     string path = Server.MapPath("imgPrueba///");
                     FileUpload1.SaveAs(path + FileUpload1.FileName);
-                    string archivo = "/imgPrueba/" + ext;
+                    string archivo = "/imgPrueba/" + FileUpload1.FileName;
                     pictureBox1.ImageUrl = archivo;
                 }
                 else
@@ -44,6 +44,31 @@ namespace ExcursionesLorePantoja
             {
                 Response.Write("<h3>Por favor Seleccione un archivo</h3>");
             }
+        }
+
+        protected void btnEnviar_Click(object sender, EventArgs e)
+        {
+            HttpPostedFile pf = FileUpload1.PostedFile;
+            string filename = Path.GetFileName(pf.FileName);
+            string filext = Path.GetExtension(filename);
+            int size = pf.ContentLength;
+            if(filext.ToLower()==".jpg" || filext.ToLower() == ".png")
+            {
+                Stream stream = pf.InputStream;
+                BinaryReader br = new BinaryReader(stream);
+                byte[] img = br.ReadBytes((int)stream.Length);
+                String insertQuery = "insert into prueba.imagen() value(@img);";
+                connection.Open();
+                command = new MySqlCommand(insertQuery, connection);
+                command.Parameters.Add("@img", MySqlDbType.LongBlob);
+                command.Parameters["@img"].Value = img;
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    string script = "alert('Registro Exitoso');";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
+                }
+            }
+            connection.Close();
         }
     }
 }

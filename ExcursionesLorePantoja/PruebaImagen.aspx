@@ -25,7 +25,7 @@
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </p>
         <p>
-            <asp:Button ID="btnEnviar" runat="server" Text="Button" />
+            <asp:Button ID="btnEnviar" runat="server" Text="Button" OnClick="btnEnviar_Click" />
         </p>
     </form>
 </body>
