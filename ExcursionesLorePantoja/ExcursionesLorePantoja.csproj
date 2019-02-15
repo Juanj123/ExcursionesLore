@@ -189,6 +189,7 @@
     <Content Include="PrincipalGaleria.aspx" />
     <Content Include="PrincipalUsers.aspx" />
     <Content Include="PrincipalVideo.aspx" />
+    <Content Include="RegistroClientes.aspx" />
     <Content Include="scripts\Autobus.js" />
     <Content Include="scripts\autocomplete.combobox.js" />
     <Content Include="scripts\bootbox.min.js" />
@@ -223,6 +224,7 @@
     <Content Include="scripts\Viajes.js" />
     <Content Include="scripts\video.js" />
     <Content Include="ViajesAdmin.aspx" />
+    <Content Include="ViajesUsers.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -398,12 +400,26 @@
     <Compile Include="Home.Master.designer.cs">
       <DependentUpon>Home.Master</DependentUpon>
     </Compile>
+    <Compile Include="RegistroClientes.aspx.cs">
+      <DependentUpon>RegistroClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroClientes.aspx.designer.cs">
+      <DependentUpon>RegistroClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViajesAdmin.aspx.cs">
       <DependentUpon>ViajesAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViajesAdmin.aspx.designer.cs">
       <DependentUpon>ViajesAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViajesUsers.aspx.cs">
+      <DependentUpon>ViajesUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViajesUsers.aspx.designer.cs">
+      <DependentUpon>ViajesUsers.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

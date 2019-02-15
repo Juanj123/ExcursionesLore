@@ -54,7 +54,9 @@
     <Compile Include="pojoMostrarVideo.cs" />
     <Compile Include="PojoPrincipal.cs" />
     <Compile Include="PojoPrincipalGaleria.cs" />
+    <Compile Include="PojoUsuarios.cs" />
     <Compile Include="PojoViaje.cs" />
+    <Compile Include="PojoViajes.cs" />
     <Compile Include="PojoVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
