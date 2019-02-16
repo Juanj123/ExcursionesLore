@@ -25,26 +25,55 @@ namespace ExcursionesLorePantoja
 
         protected void btnEscoger_Click(object sender, EventArgs e)
         {
-            if (FileUpload1.HasFile)
+            string sentencia = "select img from prueba.imagen;";
+            MySqlDataReader myReader;
+            FileStream fs;                          // Writes the BLOB to a file (*.bmp).
+            BinaryWriter bw;                        // Streams the BLOB to the FileStream object.
+            int bufferSize = 100;                   // Size of the BLOB buffer.
+            byte[] outbyte = new byte[bufferSize];  // The BLOB byte[] buffer to be filled by GetBytes.
+            long retval;                            // The bytes returned from GetBytes.
+            long startIndex = 0;                    // The starting position in the BLOB output.
+
+            // Open the connection and read data into the DataReader.
+            connection.Open();
+            command = new MySqlCommand(sentencia, connection);
+            
+            myReader = command.ExecuteReader();
+
+            while (myReader.Read())
             {
-                string ext = Path.GetExtension(FileUpload1.FileName);
-                if(ext==".jpg"|| ext == ".png")
+                // Create a file to hold the output.
+                fs = new FileStream("C:/Users/laser/Documents/ExcursionesLore/ExcursionesLorePantoja/imgPrueba/hola.jpg", FileMode.OpenOrCreate, FileAccess.Write);
+                bw = new BinaryWriter(fs);
+
+                // Reset the starting byte for the new BLOB.
+                startIndex = 0;
+
+                // Read the bytes into outbyte[] and retain the number of bytes returned.
+                retval = myReader.GetBytes(0, startIndex, outbyte, 0, bufferSize);
+
+                // Continue reading and writing while there are bytes beyond the size of the buffer.
+                while (retval == bufferSize)
                 {
-                    string path = Server.MapPath("imgPrueba///");
-                    FileUpload1.SaveAs(path + FileUpload1.FileName);
-                    string archivo = "/imgPrueba/" + FileUpload1.FileName;
-                    pictureBox1.ImageUrl = archivo;
+                    bw.Write(outbyte);
+                    bw.Flush();
+
+                    // Reposition the start index to the end of the last buffer and fill the buffer.
+                    startIndex += bufferSize;
+                    retval = myReader.GetBytes(0, startIndex, outbyte, 0, bufferSize);
                 }
-                else
-                {
-                    Response.Write("<h3>Por favor Seleccione una imagen</h3>");
-                }
+
+                // Write the remaining buffer.
+                bw.Write(outbyte, 0, (int)retval);
+                bw.Flush();
+
+                // Close the output file.
+                bw.Close();
+                fs.Close();
+                 }
+            string archivo = "/imgPrueba/hola.jpg";
+            pictureBox1.ImageUrl = archivo;
             }
-            else
-            {
-                Response.Write("<h3>Por favor Seleccione un archivo</h3>");
-            }
-        }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
