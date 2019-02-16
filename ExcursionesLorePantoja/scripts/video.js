@@ -45,7 +45,6 @@ function sendDataAjax() {
             console.log(data.d);
           
         }
-
     });
 }
 

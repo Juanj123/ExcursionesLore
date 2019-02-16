@@ -90,6 +90,5 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
- 
     <script src="scripts/video.js" type="text/javascript"></script>
 </asp:Content>

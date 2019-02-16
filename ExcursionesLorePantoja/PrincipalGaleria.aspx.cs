@@ -71,5 +71,24 @@ namespace ExcursionesLorePantoja
             }
             return lista;
         }
+
+        [WebMethod]
+        public static List<pojoMostrarGaleria> comboDescri()
+        {
+            List<pojoMostrarGaleria> lista = null;
+            DaoGaleria daoGaleria = new DaoGaleria();
+            try
+            {
+                lista = daoGaleria.obtenerGaleria();
+
+            }
+            catch (Exception ex)
+            {
+                lista = null;
+            }
+            return lista;
+        }
+
+       
     }
 }

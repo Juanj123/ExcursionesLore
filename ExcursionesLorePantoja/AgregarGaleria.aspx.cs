@@ -36,7 +36,7 @@ namespace ExcursionesLorePantoja
             bool existe;
             //HttpPostedFile mifichero;
             //mifichero = FileUpload1.PostedFile;
-            ruta = Server.MapPath("~/img/imgGaleria");
+            ruta = Server.MapPath("img\\");
             existe = Directory.Exists(ruta);
 
 
@@ -54,11 +54,11 @@ namespace ExcursionesLorePantoja
                 int tam = FileUpload1.PostedFile.ContentLength;
                 //Response.Write(ext + " , " + tam);
 
-                if (ext == ".png" && tam <= 1048576)
+                if (ext == ".png" || ext == ".jpg" && tam <= 1048576)
                 { 
                  
-                    FileUpload1.SaveAs(Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName));
-                    string path = Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName); 
+                    FileUpload1.SaveAs(Server.MapPath("~\\img\\" + FileUpload1.FileName));
+                    string path ="img\\" + FileUpload1.FileName; 
 
                     pojoGaleria.IdUsuario = 1;
                     pojoGaleria.Titulo = txtNombre.Text;

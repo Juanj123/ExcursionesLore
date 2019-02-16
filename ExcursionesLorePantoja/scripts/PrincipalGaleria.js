@@ -40,6 +40,24 @@ function sendDataAjax() {
     });
 }
 
+function combo()
+{
+    $.ajax({
+        type: "POST",
+        url: "PrincipalGaleria.aspx/comboDescri",
+        data: {},
+        contentType: "application/json; charset=utf-8",
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+        },
+        success: function (data) {
+            addRowDT(data.d);
+
+        }
+
+    });
+}
+
 //function updateDataAjax() {
 //    var obj = JSON.stringify({ nombre: $("#txtNombre").val(), url: $("#txtUrl").val(), estado: $("#dplActivo").val() });
 
