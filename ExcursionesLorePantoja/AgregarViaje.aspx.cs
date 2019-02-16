@@ -21,10 +21,9 @@ namespace ExcursionesLorePantoja
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-
             string ruta = "";
             bool existe;
+            HttpPostedFile pf = FileUpload1.PostedFile;
             //HttpPostedFile mifichero;
             //mifichero = FileUpload1.PostedFile;
             ruta = Server.MapPath("~/img/imgGaleria");
@@ -41,13 +40,18 @@ namespace ExcursionesLorePantoja
                 string ext = Path.GetExtension(FileUpload1.FileName);
                 ext = ext.ToLower();
 
-                int tam = FileUpload1.PostedFile.ContentLength;
+                int tam = pf.ContentLength;
                 //Response.Write(ext + " , " + tam);
-                if (ext == ".png" && tam <= 1048576)
+                //&& tam <= 1048576
+                if (ext == ".png" || ext == ".jpg" && tam <= 1048576)
                 {
 
                     FileUpload1.SaveAs(Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName));
                     string path = Server.MapPath("~/img/imgGaleria/" + FileUpload1.FileName);
+
+                    Stream stream = pf.InputStream;
+                    BinaryReader br = new BinaryReader(stream);
+                    byte[] img = br.ReadBytes((int)stream.Length);
 
                     pojoViaje.IdAutobus = Convert.ToInt32(dpdlAutobus.SelectedItem.Text);
                     pojoViaje.Destino = txtDestino.Text;
@@ -60,7 +64,7 @@ namespace ExcursionesLorePantoja
                     pojoViaje.Año = Convert.ToInt32(txtAnio.Text);
                     pojoViaje.Nota = txtNota.Text;
                     pojoViaje.Itinerario = txtItinerario.Text;
-                    pojoViaje.Img = path;
+                    pojoViaje.Img = img;
 
                     daoViaje.insertar(pojoViaje);
 

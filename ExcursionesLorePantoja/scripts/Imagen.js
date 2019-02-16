@@ -116,7 +116,10 @@ function fillModalData() {
     $("#txtDescripcion").val(data[1]);
     $("#txtRuta").val(data[2]);
     $("#dplActivo").val(data[3]);
-    $("#imgGale").attr("src", "'" + data[2] + "'");
+    document.getElementById("imgGale").src = "img/park.jpg";
+    //$("#imgGale").attr("src","img/park.jpg");
+
+    //data[2]
 }
 
 // enviar la informacion al servidor

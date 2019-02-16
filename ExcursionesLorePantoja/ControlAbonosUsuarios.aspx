@@ -3,15 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
     <link href="content/estilosControlAbonos.css" rel="stylesheet" />
-    
     <h1 class="text-center" id="titulo">Control de abonos</h1>
     <br />
     <br />
-
     <div class="container col-md-12 col-lg-12 col-sm-12 col-xl-12" id="c1">
-        
-        
-
         <div class="row justify-content-center">
             <div class="col-sm-10 col-md-3">
                 <div class="card t">

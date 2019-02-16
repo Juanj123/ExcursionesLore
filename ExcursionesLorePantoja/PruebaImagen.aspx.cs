@@ -16,7 +16,7 @@ namespace ExcursionesLorePantoja
 {
     public partial class PruebaImagen : System.Web.UI.Page
     {
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3306;username=root;password=");
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3307;username=root;password=root");
         MySqlCommand command;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -99,5 +99,7 @@ namespace ExcursionesLorePantoja
             }
             connection.Close();
         }
+
+   
     }
 }

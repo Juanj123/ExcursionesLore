@@ -7,6 +7,7 @@ using Capa_Pojos;
 using MySql.Data.MySqlClient;
 using MySql.Web;
 using System.Data;
+using System.IO;
 
 namespace Capa_Datos
 {
@@ -18,7 +19,9 @@ namespace Capa_Datos
             MySqlCommand cmd = new MySqlCommand();
             conec.conexion();
             cmd.Parameters.AddWithValue("@idAutobus", pojoViaje.IdAutobus);
-            cmd.Parameters.AddWithValue("@img", pojoViaje.Img);
+            cmd.Parameters.Add("@img", MySqlDbType.LongBlob);
+            cmd.Parameters["@img"].Value =  pojoViaje.Img;
+
             cmd.Parameters.AddWithValue("@destino", pojoViaje.Destino);
             cmd.Parameters.AddWithValue("@hora", pojoViaje.Hora);
             cmd.Parameters.AddWithValue("@costo", pojoViaje.Costo);
@@ -28,7 +31,7 @@ namespace Capa_Datos
             cmd.Parameters.AddWithValue("@año", pojoViaje.Año);
             cmd.Parameters.AddWithValue("@nota", pojoViaje.Nota);
             cmd.Parameters.AddWithValue("@itinerario", pojoViaje.Itinerario);
-            string consul = "insert into viajes(idViaje,idAutobus, img, destino, hora_regreso, hora_salida, costo_adulto, costo_niño, descripcion, dia, mes, año, nota, itinerario)VALUES(null, @idAutobus, load_file('@img'), @destino, null, @hora, @costo, null, @descripcion, @dia, @mes, @año, @nota, @itinerario)";
+            string consul = "insert into viajes(idViaje,idAutobus, img, destino, hora_regreso, hora_salida, costo_adulto, costo_niño, descripcion, dia, mes, año, nota, itinerario)VALUES(null, @idAutobus, @img, @destino, null, @hora, @costo, null, @descripcion, @dia, @mes, @año, @nota, @itinerario)";
             cmd.CommandText = consul;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = conec.conectar;

@@ -9,15 +9,16 @@ namespace Capa_Pojos
     public class PojoViaje
     {
         int idViaje, idAutobus, dia, mes, año;
-        string img, destino, hora, descripcion, nota, itinerario;
+        string destino, hora, descripcion, nota, itinerario;
         double costo;
+        byte[] img;
 
         public int IdViaje { get => idViaje; set => idViaje = value; }
         public int IdAutobus { get => idAutobus; set => idAutobus = value; }
         public int Dia { get => dia; set => dia = value; }
         public int Mes { get => mes; set => mes = value; }
         public int Año { get => año; set => año = value; }
-        public string Img { get => img; set => img = value; }
+        public byte[] Img { get => img; set => img = value; }
         public string Destino { get => destino; set => destino = value; }
         public string Hora { get => hora; set => hora = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }

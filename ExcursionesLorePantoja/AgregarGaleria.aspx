@@ -9,9 +9,8 @@
             <div class="col-md-6 col-lg-6 col-sm-6 col-xl-6">
                 <h2>Agregar imagen</h2>
                 <br />
-
-
-
+                
+                
                 <div class="row col-12">
 
                     <div class="form-control-file">
