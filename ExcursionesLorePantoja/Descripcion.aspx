@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:Label runat="server" Text="Descripcion"></asp:Label>
-                                     <asp:TextBox runat="server" ID="txtDescripcionM" ReadOnly="true" CssClass="form-control col-12" TextMode="MultiLine" Rows="3" placeholder="Descripcion"></asp:TextBox>
+                                     <asp:TextBox runat="server" ID="txtDescripcionM"  CssClass="form-control col-12" TextMode="MultiLine" Rows="3" placeholder="Descripcion"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">

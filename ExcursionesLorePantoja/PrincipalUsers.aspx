@@ -16,19 +16,11 @@
                 <div class="container col-md-12 col-lg-12 col-sm-12 col-xl-12" style=" overflow:hidden; background-color:white; border-radius: 15px; box-shadow: 1px 1px 2px 1px #818181;" id="conte1">
                     
                     <div class="col-4">
-                        <h5>Fotos de Guanajuato</h5>
+                        <h5>Fotos</h5>
                      
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="float:left; border-radius: 15px;">
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="float:left; border-radius: 15px; width: 100%; height: 100%;">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="img/travel-1749508_640.jpg" alt="Third slide" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/sunrise-1014712_640.jpg" alt="Second slide" />
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="img/maldives-1993704_640.jpg" alt="Second slide" />
-                            </div>
+                            <asp:Literal runat="server" ID="ltImg" Text=""></asp:Literal>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -43,10 +35,11 @@
                     
                         </div>
                     
-                    <div class="col-8"  id="texto" style="float:left; border-radius: 15px;">
-                        <p class="text-justify e">
+                    <div class="container col-md-12 col-lg-12 col-sm-12 col-xl-12"  style="overflow: hidden; background-color: white; border-radius: 15px; box-shadow: 1px 1px 2px 1px #818181;">
+                        <asp:Literal runat="server" ID="ltParrafo" Text=""></asp:Literal>
+                       <%-- <p class="text-justify e">
                             viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe
-                        </p>
+                        </p>--%>
                     </div>
         
                 </div>
