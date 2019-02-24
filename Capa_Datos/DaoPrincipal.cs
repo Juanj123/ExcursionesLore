@@ -21,13 +21,49 @@ namespace Capa_Datos
             conec.conexion();
             cmd.Parameters.AddWithValue("@idPrincipal", pojoPrincipal.IdPrincipal);
             cmd.Parameters.AddWithValue("@descripcion", pojoPrincipal.Descripcion);
-            string consul = "insert into principal(idPrincipal, description)VALUES(null,@descripcion)";
+            cmd.Parameters.AddWithValue("@estado", pojoPrincipal.Estado);
+            cmd.Parameters.AddWithValue("@idUsuario", pojoPrincipal.IdUsuario);
+            string consul = "insert into principal(idPrincipal, description, estado, idUsuario)VALUES(null,@descripcion, @estado, @idUsuario)";
             cmd.CommandText = consul;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = conec.conectar;
             cmd.ExecuteNonQuery();
             conec.conectar.Close();
             return "Guardado";
+
+        }
+
+        public bool modificar(PojoPrincipal Alma)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+
+            try
+            {
+                conec.conexion();
+
+                cmd.Parameters.AddWithValue("@idPrincipal", Alma.IdPrincipal);
+                cmd.Parameters.AddWithValue("@idUsuario", Alma.IdUsuario);
+                cmd.Parameters.AddWithValue("@descripcion", Alma.Descripcion);
+                cmd.Parameters.AddWithValue("@estado", Alma.Estado);
+                
+                string consul = "update principal set  description=@descripcion, estado=@estado, idUsuario=@idUsuario where idPrincipal=@idPrincipal";
+                cmd.CommandText = consul;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conec.conectar;
+                cmd.ExecuteNonQuery();
+
+                return true;
+
+            }
+            catch
+            {
+                return true;
+            }
+            finally
+            {
+                conec.conectar.Close();
+                conec.conectar.Close();
+            }
 
         }
 
@@ -126,6 +162,42 @@ namespace Capa_Datos
             }
         }
 
+        public int obtenerIdUsuario(string user)
+        {
+            int id = 0;
+            try
+            {
+                string sql = "";
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                sql = "select idUsuario from usuarios where Usuario like '" + user.ToString() + "'";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    id = dr.GetInt32("idUsuario");
+                    return id;
+                }
+                else
+                {
+
+                    return id;
+                }
+            }
+            catch (Exception exc)
+            {
+                return id;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
         public List<PojoPrincipal> obtenerPrincipal()
         {
 
@@ -137,7 +209,7 @@ namespace Capa_Datos
                 MySqlCommand cm = new MySqlCommand();
                 MySqlDataReader dr;
                 conec.conexion();
-                string sql = " select idPrincipal, description from principal";
+                string sql = " select idPrincipal, description, estado from principal";
                 cm.CommandText = sql;
                 cm.CommandType = CommandType.Text;
                 cm.Connection = conec.conectar;
@@ -148,6 +220,43 @@ namespace Capa_Datos
                     pojoAmbu = new PojoPrincipal();
                     pojoAmbu.IdPrincipal = dr.GetInt32("idPrincipal");
                     pojoAmbu.Descripcion = dr.GetString("description");
+                    pojoAmbu.Estado = dr.GetString("estado");
+                    concep.Add(pojoAmbu);
+                }
+                return concep;
+            }
+            catch (Exception exc)
+            {
+                return null;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
+        public List<PojoPrincipal> obtenerDescripcion()
+        {
+
+            try
+            {
+
+                List<PojoPrincipal> concep = new List<PojoPrincipal>();
+                PojoPrincipal pojoAmbu;
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                string sql = " select description, estado from principal";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    pojoAmbu = new PojoPrincipal();
+                    pojoAmbu.Descripcion = dr.GetString("description");
+                    pojoAmbu.Estado = dr.GetString("estado");
                     concep.Add(pojoAmbu);
                 }
                 return concep;

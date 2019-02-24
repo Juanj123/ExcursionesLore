@@ -24,6 +24,8 @@ namespace ExcursionesLorePantoja
 
         public void mostrarVideo()
         {
+            
+
             List<PojoVideo> listPojo = new List<PojoVideo>();
             listPojo = daoVideo.obtenerVideo();
             for (int i = 0; i < listPojo.Count(); i++)

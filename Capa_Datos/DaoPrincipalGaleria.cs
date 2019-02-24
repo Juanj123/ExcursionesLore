@@ -51,19 +51,90 @@ namespace Capa_Datos
             }
         }
 
-        public string insertar(PojoPrincipalGaleria pojoPrincipalGaleria)
+        public List<PojoPrincipalGaleria> obtenerImagenes()
+        {
+
+            try
+            {
+
+                List<PojoPrincipalGaleria> concep = new List<PojoPrincipalGaleria>();
+                PojoPrincipalGaleria pojoAmbu;
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                string sql = "select idGaleria, img from principalGaleria";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    pojoAmbu = new PojoPrincipalGaleria();
+                    pojoAmbu.IdGaleria = dr.GetInt32("idGaleria");
+                    pojoAmbu.Img = dr.GetString("img");
+                    concep.Add(pojoAmbu);
+                }
+                return concep;
+            }
+            catch (Exception exc)
+            {
+                return null;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
+        public List<PojoPrincipalGaleria> MostrarImagenes()
+        {
+
+            try
+            {
+
+                List<PojoPrincipalGaleria> concep = new List<PojoPrincipalGaleria>();
+                PojoPrincipalGaleria pojoAmbu;
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                conec.conexion();
+                string sql = "select img from principalGaleria";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = conec.conectar;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    pojoAmbu = new PojoPrincipalGaleria();
+                    pojoAmbu.Img = dr.GetString("img");
+                    concep.Add(pojoAmbu);
+                }
+                return concep;
+            }
+            catch (Exception exc)
+            {
+                return null;
+            }
+            finally
+            {
+                conec.conectar.Close();
+            }
+        }
+
+        public bool insertar(PojoPrincipalGaleria pojoPrincipalGaleria)
         {
             MySqlCommand cmd = new MySqlCommand();
             conec.conexion();
             cmd.Parameters.AddWithValue("@idGaleria", pojoPrincipalGaleria.IdGaleria);
-            cmd.Parameters.AddWithValue("@idUsuario", pojoPrincipalGaleria.IdPrincipal);
-            string consul = "insert into principalGaleria(idGaleria, idPrincipal)VALUES(@idGaleria,@idUsuario)";
+            cmd.Parameters.AddWithValue("@img", pojoPrincipalGaleria.Img);
+            string consul = "insert into principalGaleria(idGaleria, img)VALUES(@idGaleria, @img)";
             cmd.CommandText = consul;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = conec.conectar;
             cmd.ExecuteNonQuery();
             conec.conectar.Close();
-            return "Guardado";
+            return true;
 
         }
 
@@ -90,6 +161,38 @@ namespace Capa_Datos
 
         }
 
+        public bool modificar(PojoPrincipalGaleria Alma)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+
+            try
+            {
+                conec.conexion();
+
+                cmd.Parameters.AddWithValue("@idGaleria", Alma.IdGaleria);
+                cmd.Parameters.AddWithValue("@Img", Alma.Img);
+
+                string consul = "update principalGaleria set  idGaleria=@idGaleria, img=@Img where idGaleria=@idGaleria";
+                cmd.CommandText = consul;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conec.conectar;
+                cmd.ExecuteNonQuery();
+
+                return true;
+
+            }
+            catch
+            {
+                return true;
+            }
+            finally
+            {
+                conec.conectar.Close();
+                conec.conectar.Close();
+            }
+
+        }
+
         public int obtenerID(string nombre)
         {
             int id = 0;
@@ -99,7 +202,7 @@ namespace Capa_Datos
                 MySqlCommand cm = new MySqlCommand();
                 MySqlDataReader dr;
                 conec.conexion();
-                sql = "select idGaleria from galeria where img_galeria like '" + nombre.ToString() + "'";
+                sql = "select idGaleria from galeria where titulo like '" + nombre.ToString() + "'";
                 cm.CommandText = sql;
                 cm.CommandType = CommandType.Text;
                 cm.Connection = conec.conectar;

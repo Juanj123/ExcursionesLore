@@ -22,8 +22,25 @@ namespace ExcursionesLorePantoja
         {
             PojoPrincipal pojoPrincipal = new PojoPrincipal();
             DaoPrincipal daoPrincipal = new DaoPrincipal();
-            pojoPrincipal.Descripcion = txtDescripcion.Text;
-            daoPrincipal.insertar(pojoPrincipal);
+            try
+            {
+                
+                pojoPrincipal.Descripcion = txtDescripcion.Text;
+                pojoPrincipal.Estado = dplActivo.SelectedItem.Text;
+                pojoPrincipal.IdUsuario = daoPrincipal.obtenerIdUsuario("Angel");
+                daoPrincipal.insertar(pojoPrincipal);
+                
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                txtDescripcion.Text = null;
+                pojoPrincipal.Descripcion = null;
+                pojoPrincipal.Estado = null;
+                pojoPrincipal.IdUsuario = 0;
+            }
+
+            
 
         }
 
@@ -43,6 +60,24 @@ namespace ExcursionesLorePantoja
             }
             return lista;
         }
+
+        [WebMethod]
+        public static bool Actualizar(string numero, string descripcion, string estado)
+        {
+
+            DaoPrincipal daoPrincipal = new DaoPrincipal();
+            PojoPrincipal pojoPrincipal = new PojoPrincipal()
+            {
+                IdPrincipal = Convert.ToInt32(numero),
+                IdUsuario = daoPrincipal.obtenerIdUsuario("Angel"),
+                Descripcion = descripcion,
+                Estado = estado,
+
+            };
+            bool ok = daoPrincipal.modificar(pojoPrincipal);
+            return ok;
+        }
+
         [WebMethod]
         public static bool EliminarDatos(string id)
         {

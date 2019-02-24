@@ -25,8 +25,18 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:Label runat="server" Text="Costo"></asp:Label>
-                    <asp:TextBox runat="server" ID="txtCosto" placeholder="Costo" CssClass="form-control"></asp:TextBox>
+                    <asp:Label runat="server" Text="Costo Adulto"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtCosto" placeholder="Costo Adulto" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <asp:Label runat="server" Text="Costo mayores de 6 años"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtCostoM" placeholder="Costo mayores de 6 años" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                 <div class="form-group">
+                    <asp:Label runat="server" Text="Costo menores de 6 años"></asp:Label>
+                    <asp:TextBox runat="server" ID="txtCostoMen" placeholder="Costo menores de 6 años" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">

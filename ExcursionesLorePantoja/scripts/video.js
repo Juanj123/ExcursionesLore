@@ -11,7 +11,6 @@ function addRowDT(data)
     });
 
     tabla.fnClearTable();
-    console.log(data.d);
 
     for (var i = 0; i < data.length; i++)
     {

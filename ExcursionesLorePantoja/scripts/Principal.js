@@ -5,7 +5,7 @@ function addRowDT(data) {
         'order': [[0, 'asc']],
         'language': { 'url': 'scripts/datatables/jquery.dataTables_i18n.spanish.json' },
         'bSort': true,
-        'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [2] }]
+        'aoColumnDefs': [{ 'bSortable': false, 'aTargets': [3] }]
     });
 
     tabla.fnClearTable();
@@ -16,6 +16,8 @@ function addRowDT(data) {
         tabla.fnAddData([
             data[i].IdPrincipal,
             data[i].Descripcion,
+            data[i].Estado,
+            '<button value="Actualizar" title="Actualizar" class="btn btn-primary btn-edit" data-target="#exampleModalCenter" data-toggle="modal">Actualizar</button>&nbsp;' +
             '<button value="Eliminar" title="Eliminar" class="btn btn-danger btn-delete">Eliminar</button>'
         ]);
     }
@@ -34,6 +36,33 @@ function sendDataAjax() {
         success: function (data) {
             addRowDT(data.d);
 
+        }
+
+    });
+}
+
+function updateDataAjax() {
+    var obj = JSON.stringify({ numero: $("#txtNumero").val(), descripcion: $("#txtDescripcionM").val(), estado: $("#DropDownList1").val() });
+
+    console.log(obj);
+
+    $.ajax({
+        type: "POST",
+        url: "Descripcion.aspx/Actualizar",
+        data: obj,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+        },
+        success: function (response) {
+
+            if (response.d) {
+                alert("Datos actualizado correcto");
+            } else {
+                alert("Error al actualizar");
+
+            }
         }
 
     });
@@ -62,6 +91,15 @@ function deleteDataAjax(data) {
     });
 }
 
+// evento click para boton actualizar
+$(document).on('click', '.btn-edit', function (e) {
+    e.preventDefault();
+    var row = $(this).parent().parent()[0];
+    data = tabla.fnGetData(row);
+    fillModalData();
+
+});
+
 $(document).on('click', '.btn-delete', function (e) {
     e.preventDefault();
     var row = $(this).parent().parent()[0];
@@ -76,6 +114,19 @@ $(document).on('click', '.btn-delete', function (e) {
 
 }); 
 
-////Llamando a la funcion de ajax
-//$("#tableDescripcion").dataTable().fnDestroy();
+function fillModalData() {
+    $("#txtNumero").val(data[0]);
+    $("#txtDescripcionM").val(data[1]);
+    $("#DropDownList1").val(data[2]);
+}
+
+
+// enviar la informacion al servidor
+$("#btnActualizar").click(function (e) {
+    e.preventDefault();
+    updateDataAjax();
+});
+
+//Llamando a la funcion de ajax
+$("#tableDescripcion").dataTable().fnDestroy();
 sendDataAjax();
