@@ -64,13 +64,13 @@ namespace ExcursionesLorePantoja
                         if (i == 0)
                         {
                             carouselInnerHtml.AppendLine("<div class='carousel-item active'>");
-                            carouselInnerHtml.AppendLine("<img src='" + lista[i].Img + "' alt='Third slide' style='width: 90%; height: 90%;' />");
+                            carouselInnerHtml.AppendLine("<img src='" + lista[i].Img + "' alt='Third slide' style='width: 100%; height: 100%;' />");
                             carouselInnerHtml.AppendLine("</div>");
                         }
                         else
                         {
                             carouselInnerHtml.AppendLine("<div class='carousel-item'>");
-                            carouselInnerHtml.AppendLine("<img src='" + lista[i].Img + "' alt='Second slide' />");
+                            carouselInnerHtml.AppendLine("<img src='" + lista[i].Img + "' alt='Second slide' style='width: 100%; height: 100%;' />");
                             carouselInnerHtml.AppendLine("</div>");
                         }
 
