@@ -18,12 +18,17 @@ namespace ExcursionesLorePantoja
 
     public partial class apartaTuLugar : System.Web.UI.Page
     {
+         
         List<int> lugares = new List<int>();
         string valores;
         int id = 1;
 
+
+        
+       
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             litModal.Visible = true;
             DaoApartaTuLugar objDaoAparta = new DaoApartaTuLugar();
             lblPrecioAdulto1.Text = objDaoAparta.getDatosViaje(id)[0].Costo_adulto.ToString();
@@ -33,6 +38,11 @@ namespace ExcursionesLorePantoja
             var Json = JsonConvert.SerializeObject(lista);
             Response.Cookies["asientosAutobus"].Value = Json;
         }
+        //[WebMethod]
+        //public static void getIdViaje(string data)
+        //{
+        //    int idviajes = Convert.ToInt32(data);
+        //}
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {

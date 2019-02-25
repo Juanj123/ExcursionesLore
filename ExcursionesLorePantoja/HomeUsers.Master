@@ -4,11 +4,11 @@
 
 <html>
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/css; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
     <link href="content/Boostrap/bootstrap.min.css" rel="stylesheet" />
     <link href="scripts/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-
+    <link href="scripts/jquery-3.2.1.js" rel="stylesheet" type="text/javascript" />
     <link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="content/estilosMaster.css" rel="stylesheet" />
     <script defer src="https://use.fontawesome.com/releases/v5.6.1/js/all.js"></script>

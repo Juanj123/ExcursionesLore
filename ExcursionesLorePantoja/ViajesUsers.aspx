@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeUsers.Master" AutoEventWireup="true" CodeBehind="ViajesUsers.aspx.cs" Inherits="ExcursionesLorePantoja.ViajesUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="content/estilosPrincipal.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server">
-     <link href="content/estilosPrincipal.css" rel="stylesheet" />
+<asp:Content ID="Content2" ContentPlaceHolderID="bod" runat="server" Method="post" action="apartaTuLugar.aspx">
     <br />
      <div class="container-fluid">
         <div class="row">
@@ -27,17 +27,16 @@
         </div>
         <br />
         <br />
-      
-
         <div class="row col-12">
              <asp:Literal Text="" runat="server" ID="ltViajes" />
+            
         </div>
-    </div>
-    <script type="text/javascript">
-        function myFunction() {
-            window.confirm("hola");
-        }
-    </script>
+
+        </div>
+
+       
+    <%--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>--%>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="scripts/idviaje.js" type="text/javascript"></script>
 </asp:Content>

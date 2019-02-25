@@ -185,6 +185,7 @@
     <Content Include="img\travel-1749508_640.jpg" />
     <Content Include="img\tunnel.jpg" />
     <Content Include="login.aspx" />
+    <Content Include="OfertasUsers.aspx" />
     <Content Include="PerfilUsuario.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="GaleriaAdministrator.aspx" />
@@ -211,6 +212,7 @@
     <Content Include="scripts\dialogosjQuery.js" />
     <Content Include="scripts\Galeria.js" />
     <Content Include="scripts\AgregarImagen.js" />
+    <Content Include="scripts\idviaje.js" />
     <Content Include="scripts\Imagen.js" />
     <Content Include="scripts\internos\apartaTuLugar.js" />
     <Content Include="scripts\internos\Autobus.js" />
@@ -352,6 +354,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OfertasUsers.aspx.cs">
+      <DependentUpon>OfertasUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OfertasUsers.aspx.designer.cs">
+      <DependentUpon>OfertasUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="PerfilUsuario.aspx.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>

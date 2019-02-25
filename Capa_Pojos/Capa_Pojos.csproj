@@ -49,6 +49,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="PojoAutobus.cs" />
     <Compile Include="PojoGaleria.cs" />
+    <Compile Include="PojoIdViaje.cs" />
     <Compile Include="PojoImagen.cs" />
     <Compile Include="pojoMostrarGaleria.cs" />
     <Compile Include="pojoMostrarVideo.cs" />

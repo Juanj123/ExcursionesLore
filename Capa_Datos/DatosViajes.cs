@@ -32,7 +32,7 @@ namespace Capa_Datos
             {
                 pojoAmbu = new PojoViajes();
                 pojoAmbu.Idviaje = dr.GetInt32("idviaje");
-                pojoAmbu.Idautobus = dr.GetInt32("idautobus");
+                //pojoAmbu.Idautobus = dr.GetInt32("idautobus");
                 pojoAmbu.Destino = dr.GetString("destino");
                 pojoAmbu.Horaregreso = dr.GetString("hora_regreso");
                 pojoAmbu.Horasalida = dr.GetString("hora_salida");
@@ -78,6 +78,42 @@ namespace Capa_Datos
 
 
             return lstviaje;
+        }
+
+        public int obtenerID(string nombre)
+        {
+            int id = 0;
+            try
+            {
+                string sql = "";
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                cone.conexion();
+                sql = "select idViaje from viajes where destino like '" + nombre.ToString() + "'";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = cone.conectar;
+                dr = cm.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    id = dr.GetInt32("idViaje");
+                    return id;
+                }
+                else
+                {
+
+                    return id;
+                }
+            }
+            catch (Exception exc)
+            {
+                return id;
+            }
+            finally
+            {
+                cone.conectar.Close();
+            }
         }
     }
 }
