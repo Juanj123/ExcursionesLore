@@ -57,6 +57,7 @@
     <Compile Include="DaoAutobus.cs" />
     <Compile Include="DaoGaleria.cs" />
     <Compile Include="DaoImagen.cs" />
+    <Compile Include="DaoPagos.cs" />
     <Compile Include="DaoPrincipal.cs" />
     <Compile Include="DaoPrincipalGaleria.cs" />
     <Compile Include="DaoViaje.cs" />

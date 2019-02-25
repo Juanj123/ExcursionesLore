@@ -34,5 +34,43 @@ namespace Capa_Datos
             cm.ExecuteNonQuery();
             cone.conectar.Close();
         }
+
+        public List<PojoUsuarios> obtenerClientes()
+        {
+
+            try
+            {
+
+                List<PojoUsuarios> concep = new List<PojoUsuarios>();
+                PojoUsuarios pojoAmbu;
+                MySqlCommand cm = new MySqlCommand();
+                MySqlDataReader dr;
+                cone.conexion();
+                string sql = "select nombres, apellidos, correo, Usuario from usuarios";
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                cm.Connection = cone.conectar;
+                dr = cm.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    pojoAmbu = new PojoUsuarios();
+                    pojoAmbu.Nombres = dr.GetString("nombres");
+                    pojoAmbu.Apellidos = dr.GetString("apellidos");
+                    pojoAmbu.Correo = dr.GetString("correo");
+                    pojoAmbu.Usuario = dr.GetString("Usuario");
+                    concep.Add(pojoAmbu);
+                }
+                return concep;
+        }
+            catch (Exception exc)
+            {
+                return null;
+            }
+            finally
+            {
+                cone.conectar.Close();
+            }
+        }
     }
 }

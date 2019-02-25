@@ -19,13 +19,13 @@
             <asp:Image ID="pictureBox1" runat="server" />
         </p>
         <asp:FileUpload ID="FileUpload1" runat="server" />
-        <asp:Button ID="btnEscoger" runat="server" OnClick="btnEscoger_Click" Text="Button" />
+        <asp:Button ID="btnEscoger" runat="server" OnClick="btnEscoger_Click" Text="MOSTRAR" />
         <p>
             <asp:Label ID="Label3" runat="server" Text="Descripcion"></asp:Label>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </p>
         <p>
-            <asp:Button ID="btnEnviar" runat="server" Text="Button" OnClick="btnEnviar_Click" />
+            <asp:Button ID="btnEnviar" runat="server" Text="ENVIAR" OnClick="btnEnviar_Click" />
         </p>
     </form>
 </body>

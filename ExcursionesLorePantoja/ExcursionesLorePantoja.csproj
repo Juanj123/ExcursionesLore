@@ -57,6 +57,7 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -194,6 +195,7 @@
     <Content Include="PrincipalVideo.aspx" />
     <Content Include="PruebaImagen.aspx" />
     <Content Include="RegistroClientes.aspx" />
+    <Content Include="scripts\agregarPrincipalGaleria.js" />
     <Content Include="scripts\Autobus.js" />
     <Content Include="scripts\autocomplete.combobox.js" />
     <Content Include="scripts\bootbox.min.js" />
@@ -203,6 +205,7 @@
     <Content Include="scripts\bootstrap\bootstrap.min.js" />
     <Content Include="scripts\bootstrap\ie10-viewport-bug-workaround.js" />
     <Content Include="scripts\bootstrap\popper.min.js" />
+    <Content Include="scripts\clientes.js" />
     <Content Include="scripts\datatables\dataTables.bootstrap4.js" />
     <Content Include="scripts\datatables\dataTables.bootstrap4.min.css" />
     <Content Include="scripts\datatables\datatables.js" />
